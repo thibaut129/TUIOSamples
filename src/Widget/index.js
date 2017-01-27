@@ -4,16 +4,26 @@
  * @author Nicolas Forget
  */
 
+// Import JQuery
+import $ from 'jquery/dist/jquery.min';
+
+// Import TUIOManager
+import TUIOManager from 'tuiomanager/core/TUIOManager';
+
 // Import ImageWidget
 import ImageWidget from './src/ImageWidget';
 
-const imgNode = document.createElement('img');
-imgNode.src = 'assets/IMG_20150304_201145.jpg';
-imgNode.style.width = '500px';
-imgNode.style.height = '666px';
-imgNode.style.position = 'absolute';
-imgNode.ondragstart = () => (false);
+/** TUIOManager starter **/
+const tuioManager = new TUIOManager();
+tuioManager.start();
 
-document.body.appendChild(imgNode);
+/** App Code **/
 
-const imageWidget = new ImageWidget(imgNode, 0, 0, 500, 666);
+const buildApp = () => {
+  const imageWidget = new ImageWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
+  $('#app').append(imageWidget.domElem);
+};
+
+$(window).ready(() => {
+  buildApp();
+});

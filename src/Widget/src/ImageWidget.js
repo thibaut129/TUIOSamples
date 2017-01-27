@@ -1,13 +1,19 @@
 /**
  * @author Christian Brel <ch.brel@gmail.com>
- * @author Vincent Forquet
- * @author Nicolas Forget
  */
 
-import TUIOWidget from 'tuiomanager/src/TUIOWidget';
+// Import JQuery
+import $ from 'jquery/dist/jquery.min';
+
+import TUIOWidget from 'tuiomanager/core/TUIOWidget';
+import { WINDOW_WIDTH, WINDOW_HEIGHT } from 'tuiomanager/core/constants';
 
 /**
  * Main class to manage ImageWidget.
+ *
+ * Note:
+ * It's dummy implementation juste to give an example
+ * about how to use TUIOManager framework.
  *
  * @class ImageWidget
  * @extends TUIOWidget
@@ -17,17 +23,107 @@ class ImageWidget extends TUIOWidget {
    * ImageWidget constructor.
    *
    * @constructor
-   * @param {any} domElem - ImageWidget's domElem.
    * @param {number} x - ImageWidget's upperleft coin abscissa.
    * @param {number} y - ImageWidget's upperleft coin ordinate.
    * @param {number} width - ImageWidget's width.
    * @param {number} height - ImageWidget's height.
    */
-  constructor(domElem, x, y, width, height) {
-    super(domElem, x, y, width, height);
-    console.log('ImageWidget');
+  constructor(x, y, width, height, imgSrc) {
+    super(x, y, width, height);
+
+    this._lastTouchesValues = {};
+
+    this._domElem = $('<img>');
+    this._domElem.attr('src', imgSrc);
+    this._domElem.css('width', `${width}px`);
+    this._domElem.css('height', `${height}px`);
+    this._domElem.css('position', 'absolute');
+    this._domElem.css('left', `${x}px`);
+    this._domElem.css('top', `${y}px`);
   }
 
+  /**
+   * ImageWidget's domElem.
+   *
+   * @returns {JQuery Object} ImageWidget's domElem.
+   */
+  get domElem() { return this._domElem; }
+
+  /**
+   * Call after a TUIOTouch creation.
+   *
+   * @method onTouchCreation
+   * @param {TUIOTouch} tuioTouch - A TUIOTouch instance.
+   */
+  onTouchCreation(tuioTouch) {
+    super.onTouchCreation(tuioTouch);
+    if (this.isTouched(tuioTouch.x, tuioTouch.y)) {
+      this._lastTouchesValues = {
+        ...this._lastTouchesValues,
+        [tuioTouch.id]: {
+          x: tuioTouch.x,
+          y: tuioTouch.y,
+        },
+      };
+    }
+  }
+
+  /**
+   * Call after a TUIOTouch update.
+   *
+   * @method onTouchUpdate
+   * @param {TUIOTouch} tuioTouch - A TUIOTouch instance.
+   */
+  onTouchUpdate(tuioTouch) {
+    if (typeof (this._lastTouchesValues[tuioTouch.id]) !== 'undefined') {
+      const lastTouchValue = this._lastTouchesValues[tuioTouch.id];
+      const diffX = tuioTouch.x - lastTouchValue.x;
+      const diffY = tuioTouch.y - lastTouchValue.y;
+
+      let newX = this.x + diffX;
+      let newY = this.y + diffY;
+
+      if (newX < 0) {
+        newX = 0;
+      }
+
+      if (newX > (WINDOW_WIDTH - this.width)) {
+        newX = WINDOW_WIDTH - this.width;
+      }
+
+      if (newY < 0) {
+        newY = 0;
+      }
+
+      if (newY > (WINDOW_HEIGHT - this.height)) {
+        newY = WINDOW_HEIGHT - this.height;
+      }
+
+      this.moveTo(newX, newY);
+
+      this._lastTouchesValues = {
+        ...this._lastTouchesValues,
+        [tuioTouch.id]: {
+          x: tuioTouch.x,
+          y: tuioTouch.y,
+        },
+      };
+    }
+  }
+
+  /**
+   * Move ImageWidget.
+   *
+   * @method moveTo
+   * @param {string/number} x - New ImageWidget's abscissa.
+   * @param {string/number} y - New ImageWidget's ordinate.
+   */
+  moveTo(x, y) {
+    this._x = x;
+    this._y = y;
+    this._domElem.css('left', `${x}px`);
+    this._domElem.css('top', `${y}px`);
+  }
 }
 
 export default ImageWidget;

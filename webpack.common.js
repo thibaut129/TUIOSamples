@@ -6,6 +6,7 @@ const combineLoaders = require('webpack-combine-loaders/combineLoaders');
 
 const includePaths = [
   fs.realpathSync(`${__dirname}/src`),
+  fs.realpathSync(`${__dirname}/node_modules/tuiomanager/`),
 ];
 
 const resolvePaths = [
@@ -14,11 +15,11 @@ const resolvePaths = [
 
 module.exports = () => (
   {
-    entry: './src/index.js',
+    entry: './src/Widget/index.js',
     output: {
       path: path.join(__dirname, 'dist'),
       publicPath: '/',
-      filename: '[name].js',
+      filename: 'widget.js',
     },
     resolve: {
       extensions: ['', '.js'],

@@ -25,7 +25,7 @@ webpackConfig.plugins.push(
       dead_code: true,
       warnings: false,
     },
-  })
+  }),
 );
 
 compiler.run((err, stats) => {

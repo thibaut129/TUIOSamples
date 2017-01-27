@@ -8,7 +8,7 @@ if (!fs.existsSync(nodeModulesDir)) {
 }
 
 const puts = function(error, stdout, stderr) {
-    if(error) {
+    if (error) {
         console.error(error);
     }
 };

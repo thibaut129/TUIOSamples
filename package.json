@@ -14,6 +14,7 @@
   "license": "AtelierIHM",
   "main": "dist/*/index.js",
   "dependencies": {
+    "jquery": "^3.1.1",
     "tuiomanager": "file:node_modules/tuiomanager"
   },
   "devDependencies": {
