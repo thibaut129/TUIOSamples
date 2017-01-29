@@ -6,6 +6,8 @@ const getConfig = require('./webpack.common.js');
 
 const webpackConfig = getConfig();
 
+webpackConfig.output.publicPath = './';
+
 const buildPath = webpackConfig.output.path;
 
 if (buildPath !== __dirname) {
@@ -13,8 +15,6 @@ if (buildPath !== __dirname) {
 }
 
 const compiler = webpack(webpackConfig);
-
-webpackConfig.output.filename = 'tuiomanager.min.js';
 
 webpackConfig.plugins.push(
   new webpack.optimize.OccurrenceOrderPlugin(),
@@ -25,7 +25,7 @@ webpackConfig.plugins.push(
       dead_code: true,
       warnings: false,
     },
-  }),
+  })
 );
 
 compiler.run((err, stats) => {

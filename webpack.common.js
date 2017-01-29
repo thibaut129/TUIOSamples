@@ -2,6 +2,8 @@ const path = require('path');
 const fs = require('fs');
 /* eslint-disable import/no-extraneous-dependencies */
 const combineLoaders = require('webpack-combine-loaders/combineLoaders');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 /* eslint-enable import/no-extraneous-dependencies */
 
 const includePaths = [
@@ -13,13 +15,33 @@ const resolvePaths = [
   fs.realpathSync(`${__dirname}/node_modules/`),
 ];
 
+const htmlWebpackPluginInstance = new HtmlWebpackPlugin({
+  template: './index.ejs',
+  filename: './index.html',
+  showErrors: true,
+});
+const copyWebpackPluginInstance = new CopyWebpackPlugin(
+  [
+    { from: './assets', to: './assets' },
+  ],
+  {
+    copyUnmodified: false,
+    debug: 'debug',
+  }
+);
+
 module.exports = () => (
   {
-    entry: './src/Widget/index.js',
+    devServer: {
+      inline: true,
+      historyApiFallback: true,
+      port: 3000,
+    },
+    entry: './src/index.js',
     output: {
       path: path.join(__dirname, 'dist'),
       publicPath: '/',
-      filename: 'widget.js',
+      filename: 'index.js',
     },
     resolve: {
       extensions: ['', '.js'],
@@ -63,6 +85,9 @@ module.exports = () => (
         },
       ],
     },
-    plugins: [],
+    plugins: [
+      htmlWebpackPluginInstance,
+      copyWebpackPluginInstance
+    ]
   }
 );
