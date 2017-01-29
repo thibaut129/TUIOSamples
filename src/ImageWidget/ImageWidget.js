@@ -7,6 +7,7 @@ import $ from 'jquery/dist/jquery.min';
 
 import TUIOWidget from 'tuiomanager/core/TUIOWidget';
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from 'tuiomanager/core/constants';
+import { radToDeg } from 'tuiomanager/core/helpers';
 
 /**
  * Main class to manage ImageWidget.
@@ -32,6 +33,7 @@ class ImageWidget extends TUIOWidget {
     super(x, y, width, height);
 
     this._lastTouchesValues = {};
+    this._lastTagsValues = {};
 
     this._domElem = $('<img>');
     this._domElem.attr('src', imgSrc);
@@ -100,7 +102,6 @@ class ImageWidget extends TUIOWidget {
       }
 
       this.moveTo(newX, newY);
-
       this._lastTouchesValues = {
         ...this._lastTouchesValues,
         [tuioTouch.id]: {
@@ -112,17 +113,82 @@ class ImageWidget extends TUIOWidget {
   }
 
   /**
+   * Call after a TUIOTag creation.
+   *
+   * @method onTagCreation
+   * @param {TUIOTag} tuioTag - A TUIOTag instance.
+   */
+  onTagCreation(tuioTag) {
+    super.onTagCreation(tuioTag);
+    if (this.isTouched(tuioTag.x, tuioTag.y)) {
+      this._lastTagsValues = {
+        ...this._lastTagsValues,
+        [tuioTag.id]: {
+          x: tuioTag.x,
+          y: tuioTag.y,
+        },
+      };
+    }
+  }
+
+  /**
+   * Call after a TUIOTag update.
+   *
+   * @method onTagUpdate
+   * @param {TUIOTag} tuioTag - A TUIOTag instance.
+   */
+  onTagUpdate(tuioTag) {
+    if (typeof (this._lastTagsValues[tuioTag.id]) !== 'undefined') {
+      const lastTagValue = this._lastTagsValues[tuioTag.id];
+      const diffX = tuioTag.x - lastTagValue.x;
+      const diffY = tuioTag.y - lastTagValue.y;
+
+      let newX = this.x + diffX;
+      let newY = this.y + diffY;
+
+      if (newX < 0) {
+        newX = 0;
+      }
+
+      if (newX > (WINDOW_WIDTH - this.width)) {
+        newX = WINDOW_WIDTH - this.width;
+      }
+
+      if (newY < 0) {
+        newY = 0;
+      }
+
+      if (newY > (WINDOW_HEIGHT - this.height)) {
+        newY = WINDOW_HEIGHT - this.height;
+      }
+
+      this.moveTo(newX, newY, radToDeg(tuioTag.angle));
+      this._lastTagsValues = {
+        ...this._lastTagsValues,
+        [tuioTag.id]: {
+          x: tuioTag.x,
+          y: tuioTag.y,
+        },
+      };
+    }
+  }
+
+  /**
    * Move ImageWidget.
    *
    * @method moveTo
    * @param {string/number} x - New ImageWidget's abscissa.
    * @param {string/number} y - New ImageWidget's ordinate.
+   * @param {number} angle - New ImageWidget's angle.
    */
-  moveTo(x, y) {
+  moveTo(x, y, angle = null) {
     this._x = x;
     this._y = y;
     this._domElem.css('left', `${x}px`);
     this._domElem.css('top', `${y}px`);
+    if (angle !== null) {
+      this._domElem.css('transform', `rotate(${angle}deg)`);
+    }
   }
 }
 
