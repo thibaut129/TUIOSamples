@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "scripts": {
     "devMode": "node initTUIOManagerDevMode.js",
-    "build": "node dev-webpack-compiler.js",
     "dist": "node prod-webpack-compiler.js",
     "start": "webpack-dev-server"
   },
@@ -15,7 +14,7 @@
   "license": "AtelierIHM",
   "dependencies": {
     "jquery": "3.1.1",
-    "tuiomanager": "file:node_modules/tuiomanager"
+    "tuiomanager": "1.2.1"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
