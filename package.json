@@ -1,6 +1,6 @@
 {
   "name": "tuiosamples",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "devMode": "node initTUIOManagerDevMode.js",
     "dist": "node prod-webpack-compiler.js",
@@ -14,7 +14,7 @@
   "license": "AtelierIHM",
   "dependencies": {
     "jquery": "3.1.1",
-    "tuiomanager": "1.2.1"
+    "tuiomanager": "1.2.3"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
