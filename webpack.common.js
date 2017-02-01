@@ -76,8 +76,7 @@ module.exports = () => (
               loader: 'eslint-loader',
             },
           ]),
-          include: includePaths,
-          exclude: /node_modules/,
+          include: includePaths
         },
         {
           test: /\.json$/,
