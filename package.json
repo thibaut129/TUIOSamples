@@ -1,6 +1,6 @@
 {
   "name": "tuiosamples",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "devMode": "node initTUIOManagerDevMode.js",
     "dist": "node prod-webpack-compiler.js",
