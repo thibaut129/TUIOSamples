@@ -55,6 +55,7 @@ module.exports = () => (
     eslint: {
       configFile: './.eslintrc',
     },
+    devtool: 'eval-source-map',
     module: {
       loaders: [
         {
@@ -72,9 +73,9 @@ module.exports = () => (
                 ].map(dep => require.resolve(`babel-plugin-${dep}`)),
               },
             },
-            {
+            /*{
               loader: 'eslint-loader',
-            },
+            },*/
           ]),
           include: includePaths
         },
