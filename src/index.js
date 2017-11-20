@@ -11,6 +11,7 @@ import $ from 'jquery/dist/jquery.min';
 import TUIOManager from 'tuiomanager/core/TUIOManager';
 
 // Import ImageWidget
+import ImageElementWidget from './ElementWidget/ImageElementWidget/ImageElementWidget';
 import ImageWidget from './ImageWidget/ImageWidget';
 
 /** TUIOManager starter **/
@@ -21,6 +22,8 @@ tuioManager.start();
 
 const buildApp = () => {
   const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
+  console.log("imageWidget.domElem = " + imageWidget.domElem);
+
   $('#app').append(imageWidget.domElem);
 };
 

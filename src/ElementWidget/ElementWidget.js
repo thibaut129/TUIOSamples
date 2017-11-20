@@ -1,12 +1,19 @@
+/**
+ * @author Kevin Duglue <kevin.duglue@gmail.com>
+ * @author Rémy Kaloustian <remy.kaloustian@gmail.com>
+ */
 
-
-import $ from 'jquery/dist/jquery.min';
 
 import TUIOWidget from 'tuiomanager/core/TUIOWidget';
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from 'tuiomanager/core/constants';
 import { radToDeg } from 'tuiomanager/core/helpers';
 
-// Classe Abstraite
+/**
+ * Abstract class to manage ImageElementWidget.
+ *
+ * @class ElementWidget
+ * @extends TUIOWidget
+ */
 class ElementWidget extends TUIOWidget {
 
     constructor(x, y, width, height) {
@@ -16,7 +23,8 @@ class ElementWidget extends TUIOWidget {
         super(x, y, width, height);
         this._lastTouchesValues = {};
         this._lastTagsValues = {};
-    }
+    }//constructor
+
 
     /**
      * ImageWidget's domElem.
@@ -24,7 +32,7 @@ class ElementWidget extends TUIOWidget {
      * @returns {JQuery Object} ImageWidget's domElem.
      */
     get domElem() { return this._domElem; }
-  
+
     /**
      * Call after a TUIOTouch creation.
      *
@@ -105,3 +113,4 @@ class ElementWidget extends TUIOWidget {
   }
 }
 
+export default ElementWidget;

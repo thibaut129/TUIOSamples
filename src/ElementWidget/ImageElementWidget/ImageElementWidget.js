@@ -10,6 +10,7 @@
  import TUIOWidget from 'tuiomanager/core/TUIOWidget';
  import { WINDOW_WIDTH, WINDOW_HEIGHT } from 'tuiomanager/core/constants';
  import { radToDeg } from 'tuiomanager/core/helpers';
+ import ElementWidget from '../ElementWidget';
 
 
  /**
@@ -39,6 +40,9 @@
      this._domElem.css('position', 'absolute');
      this._domElem.css('left', `${x}px`);
      this._domElem.css('top', `${y}px`);
+
    }//constructor
 
  }//class ImageElementWidget
+
+ export default ImageElementWidget;
