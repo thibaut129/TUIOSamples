@@ -20,7 +20,7 @@ tuioManager.start();
 /** App Code **/
 
 const buildApp = () => {
-  const imageWidget = new ImageWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
+  const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
   $('#app').append(imageWidget.domElem);
 };
 
