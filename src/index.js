@@ -11,8 +11,8 @@ import $ from 'jquery/dist/jquery.min';
 import TUIOManager from 'tuiomanager/core/TUIOManager';
 
 // Import ImageWidget
-import ImageElementWidget from './ElementWidget/ImageElementWidget/ImageElementWidget';
-import ImageWidget from './ImageWidget/ImageWidget';
+import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWidget/ImageElementWidget';
+import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
 
 /** TUIOManager starter **/
 const tuioManager = new TUIOManager();
@@ -22,9 +22,9 @@ tuioManager.start();
 
 const buildApp = () => {
   const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
-  console.log("imageWidget.domElem = " + imageWidget.domElem);
-
+  const videoWidget = new VideoElementWidget(100, 100, 250, 333, 'http://techslides.com/demos/sample-videos/small.mp4');
   $('#app').append(imageWidget.domElem);
+  $('#app').append(videoWidget.domElem);
 };
 
 $(window).ready(() => {
