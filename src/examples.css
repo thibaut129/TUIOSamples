@@ -1,0 +1,17 @@
+
+#healthy-container
+{
+  color:#4caf50;
+  width:40%;
+  text-align: center;
+}
+
+#unhealthy-container
+{
+  position: absolute;
+  right:0;
+  top:0;
+  width:40%;
+  color:#f44336;
+  text-align: center;
+}
