@@ -27,7 +27,7 @@ function buildHealth() {
 
   const candiesImage = new ImageElementWidget(50, 400, 110, 110, 'assets/example-health/candies.png');
   $('#app').append(candiesImage.domElem);
-  const appleImage = new ImageElementWidget(250, 400, 500, 500, 'assets/example-health/apple.png');
+  const appleImage = new ImageElementWidget(250, 400, 110, 110, 'assets/example-health/apple.png');
   $('#app').append(appleImage.domElem);
   const bananaImage = new ImageElementWidget(450, 400, 110, 110, 'assets/example-health/banana.png');
   $('#app').append(bananaImage.domElem);
