@@ -9,7 +9,6 @@ import $ from 'jquery/dist/jquery.min';
 import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWidget/ImageElementWidget';
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
 
-
 export function buildMenu() {
   $('#app').append('<button id="development"> Development </button> </br>');
   $('#app').append('<button id="fruits"> Fruits and vegetables (using ImageElementWidget) </button></br>');
@@ -20,7 +19,7 @@ export function buildMenu() {
     buildDevelopment();
   });
   $('#fruits').on('click', () => {
-    console.log('fruits clicked');
+    buildHealth();
   });
   $('#puzzle').on('click', () => {
     console.log('puzzle clicked');
@@ -35,3 +34,11 @@ function buildDevelopment() {
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
 }// buildDevelopment()
+
+ function buildHealth() {
+   $('#app').empty();
+
+   $('#app').append('<div id="healthy-container">  <h1>Healthy</h1>  </div>');
+   $('#app').append('<div id="unhealthy-container">  <h1>Unhealthy</h1>  </div>');
+
+ }// buildHealth()
