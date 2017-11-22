@@ -28,9 +28,6 @@ function buildHealth() {
   $('#app').append(broccoliImage.domElem);
   const tomatoImage = new ImageElementWidget(1050, 400, 110, 110, 'assets/example-health/tomato.png');
   $('#app').append(tomatoImage.domElem);
-  const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
-  $('#app').append(imageWidget.domElem);
-
 }// buildHealth()
 
 
