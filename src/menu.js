@@ -41,13 +41,17 @@ function buildDevelopment() {
    $('#app').append('<div id="healthy-container">  <h1>Healthy</h1>  </div>');
    $('#app').append('<div id="unhealthy-container">  <h1>Unhealthy</h1>  </div>');
 
-   const appleImage = new ImageElementWidget(50, 400, 150, 150, 'assets/example-health/apple.jpg');
+   const candiesImage = new ImageElementWidget(50, 400, 110, 110, 'assets/example-health/candies.png');
+   $('#app').append(candiesImage.domElem);
+   const appleImage = new ImageElementWidget(250, 400, 110, 110, 'assets/example-health/apple.png');
    $('#app').append(appleImage.domElem);
-   const bananaImage = new ImageElementWidget(250, 400, 150, 150, 'assets/example-health/banana.jpg');
+   const bananaImage = new ImageElementWidget(450, 400, 110, 110, 'assets/example-health/banana.png');
    $('#app').append(bananaImage.domElem);
-   const broccoliImage = new ImageElementWidget(450, 400, 150, 150, 'assets/example-health/broccoli.jpg');
+   const chipsImage = new ImageElementWidget(650, 400, 110, 110, 'assets/example-health/chips.png');
+   $('#app').append(chipsImage.domElem);
+   const broccoliImage = new ImageElementWidget(850, 400, 110, 110, 'assets/example-health/broccoli.png');
    $('#app').append(broccoliImage.domElem);
-   const tomatoImage = new ImageElementWidget(650, 400, 150, 150, 'assets/example-health/tomato.jpg');
+   const tomatoImage = new ImageElementWidget(1050, 400, 110, 110, 'assets/example-health/tomato.png');
    $('#app').append(tomatoImage.domElem);
    /*const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
    const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
