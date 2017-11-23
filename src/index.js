@@ -28,15 +28,8 @@ const buildApp = () => {
   const videoWidget = new VideoElementWidget(100, 100, 250, 333, 'http://techslides.com/demos/sample-videos/small.mp4');
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);*/
-
-  $('#app').append('<h1> TUIO Showcase </h1>');
   buildMenu();
-
-
-
 };
-
-
 
 $(window).ready(() => {
   buildApp();

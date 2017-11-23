@@ -9,6 +9,14 @@ body
 }
 
 
+#back-button
+{
+  position: absolute;
+  left:10;
+  bottom:0;
+  z-index: 99999;
+}
+
 #healthy-container
 {
   position: absolute;
@@ -19,7 +27,6 @@ body
   background-color:#E8F5E9;
   top:0;
   left:0;
-
 }
 
 #unhealthy-container
