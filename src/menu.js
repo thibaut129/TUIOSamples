@@ -22,7 +22,7 @@ function buildDevelopment() {
   $('#app').empty();
   buildBackButton();
   const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38', '');
-  const videoWidget = new VideoElementWidget(100, 100, 250, 333, 'http://techslides.com/demos/sample-videos/small.mp4', 'B3', 'C9', '38', '');
+  const videoWidget = new VideoElementWidget(100, 100, 250, 140, 'assets/video/video.mp4', 'B3', 'C9', '38', '', '3', '');
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
 }// buildDevelopment()
