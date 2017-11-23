@@ -10,6 +10,14 @@ import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWi
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
 
 
+function buildBackButton() {
+  $('#app').append('<button id="back-button">Back</button>');
+  $('#back-button').on('click', () => {
+    $('#app').empty();
+    buildMenu();
+  });
+}//  displayMenu()
+
 function buildDevelopment() {
   $('#app').empty();
   buildBackButton();
@@ -58,16 +66,8 @@ function buildPuzzle() {
   $('#app').append(puz7.domElem);
   const puz8 = new ImageElementWidget(50, 400, 340, 558, 'assets/example-puzzle/8.png');
   $('#app').append(puz8.domElem);
-
 }// buildPuzzle()
 
-function buildBackButton() {
-  $('#app').append('<button id="back-button">Back</button>');
-  $('#back-button').on('click', () => {
-    $('#app').empty();
-    buildMenu();
-  });
-}//displayMenu()
 
 export function buildMenu() {
   $('#app').append('<h1> TUIO Showcase </h1>');
@@ -84,5 +84,4 @@ export function buildMenu() {
   $('#puzzle').on('click', () => {
     buildPuzzle();
   });
-
 }// buildMenu()
