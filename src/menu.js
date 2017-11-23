@@ -71,9 +71,9 @@ function buildPuzzle() {
 
 export function buildMenu() {
   $('#app').append('<h1> TUIO Showcase </h1>');
-  $('#app').append('<button id="development"> Development </button> </br>');
-  $('#app').append('<button id="health"> Health (using ImageElementWidget) </button></br>');
-  $('#app').append('<button id="puzzle"> Puzzle (using ImageElementWidget) </button></br>');
+  $('#app').append('<button id="development" class="menu-button"> Development </button> </br>');
+  $('#app').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
+  $('#app').append('<button id="puzzle" class="menu-button"> Puzzle (using ImageElementWidget) </button></br>');
 
   $('#development').on('click', () => {
     buildDevelopment();
