@@ -10,6 +10,14 @@ import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWi
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
 
 
+function buildBackButton() {
+  $('#app').append('<button id="back-button">Back</button>');
+  $('#back-button').on('click', () => {
+    $('#app').empty();
+    buildMenu();
+  });
+}//  displayMenu()
+
 function buildDevelopment() {
   $('#app').empty();
   buildBackButton();
@@ -58,22 +66,14 @@ function buildPuzzle() {
   $('#app').append(puz7.domElem);
   const puz8 = new ImageElementWidget(50, 400, 340, 558, 'assets/example-puzzle/8.png', 'B3', 'C9', '38', '');
   $('#app').append(puz8.domElem);
-
 }// buildPuzzle()
 
-function buildBackButton() {
-  $('#app').append('<button id="back-button">Back</button>');
-  $('#back-button').on('click', () => {
-    $('#app').empty();
-    buildMenu();
-  });
-}//displayMenu()
 
 export function buildMenu() {
   $('#app').append('<h1> TUIO Showcase </h1>');
-  $('#app').append('<button id="development"> Development </button> </br>');
-  $('#app').append('<button id="health"> Health (using ImageElementWidget) </button></br>');
-  $('#app').append('<button id="puzzle"> Puzzle (using ImageElementWidget) </button></br>');
+  $('#app').append('<button id="development" class="menu-button"> Development </button> </br>');
+  $('#app').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
+  $('#app').append('<button id="puzzle" class="menu-button"> Puzzle (using ImageElementWidget) </button></br>');
 
   $('#development').on('click', () => {
     buildDevelopment();
@@ -84,5 +84,4 @@ export function buildMenu() {
   $('#puzzle').on('click', () => {
     buildPuzzle();
   });
-
 }// buildMenu()
