@@ -44,17 +44,17 @@ function buildHealth() {
 
   $('.title-bottom').css('marginTop', height + 'px');
 
-    const candiesImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
+    const candiesImage = new ImageElementWidget(40, 50, 110, 110, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
   $('#app').append(candiesImage.domElem);
-  const appleImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/apple.png', 'B3', 'C9', '38', '');
+  const appleImage = new ImageElementWidget(850,20, 110, 110, 'assets/example-health/apple.png', 'B3', 'C9', '38', '');
   $('#app').append(appleImage.domElem);
-  const bananaImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/banana.png', 'B3', 'C9', '38', '');
+  const bananaImage = new ImageElementWidget(1000,200, 110, 110, 'assets/example-health/banana.png', 'B3', 'C9', '38', '');
   $('#app').append(bananaImage.domElem);
-  const chipsImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/chips.png', 'B3', 'C9', '38', '');
+  const chipsImage = new ImageElementWidget(450,20, 110, 110, 'assets/example-health/chips.png', 'B3', 'C9', '38', '');
   $('#app').append(chipsImage.domElem);
-  const broccoliImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/broccoli.png', 'B3', 'C9', '38', '');
+  const broccoliImage = new ImageElementWidget(450,600, 110, 110, 'assets/example-health/broccoli.png', 'B3', 'C9', '38', '');
   $('#app').append(broccoliImage.domElem);
-  const tomatoImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/tomato.png', 'B3', 'C9', '38', '');
+  const tomatoImage = new ImageElementWidget(50,600 , 110, 110, 'assets/example-health/tomato.png', 'B3', 'C9', '38', '');
   $('#app').append(tomatoImage.domElem);
 }// buildHealth()
 
