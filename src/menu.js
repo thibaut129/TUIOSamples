@@ -25,8 +25,8 @@ function buildBackButton() {
 function buildDevelopment() {
   $('#app').empty();
   buildBackButton();
-  const imageWidget = new ImageElementWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38', '');
-  const videoWidget = new VideoElementWidget(100, 100, 250, 140, 'assets/video/video.mp4', 'B3', 'C9', '38', '', '3', '');
+  const imageWidget = new ImageElementWidget(0, 0, 250, 333, 0, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38', '');
+  const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 'assets/video/video.mp4', 'B3', 'C9', '38', '', '3', '');
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
 }// buildDevelopment()
@@ -44,38 +44,39 @@ function buildHealth() {
 
   $('.title-bottom').css('marginTop', height + 'px');
 
-  const candiesImage = new ImageElementWidget(100, 150, 110, 110, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
+  const candiesImage = new ImageElementWidget(100, 150, 110, 110, 0, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
+  candiesImage.disable(true);
   $('#app').append(candiesImage.domElem);
-  const appleImage = new ImageElementWidget(850, 20, 110, 110, 'assets/example-health/apple.png', 'B3', 'C9', '38', '');
+  const appleImage = new ImageElementWidget(850, 20, 110, 110, 0, 'assets/example-health/apple.png', 'B3', 'C9', '38', '');
   $('#app').append(appleImage.domElem);
-  const bananaImage = new ImageElementWidget(1700, 500, 110, 110, 'assets/example-health/banana.png', 'B3', 'C9', '38', '');
+  const bananaImage = new ImageElementWidget(1700, 500, 110, 110, 0, 'assets/example-health/banana.png', 'B3', 'C9', '38', '');
   $('#app').append(bananaImage.domElem);
-  const chipsImage = new ImageElementWidget(1500, 20, 110, 110, 'assets/example-health/chips.png', 'B3', 'C9', '38', '');
+  const chipsImage = new ImageElementWidget(1500, 20, 110, 110, 0, 'assets/example-health/chips.png', 'B3', 'C9', '38', '');
   $('#app').append(chipsImage.domElem);
-  const broccoliImage = new ImageElementWidget(200, 700, 110, 110, 'assets/example-health/broccoli.png', 'B3', 'C9', '38', '');
+  const broccoliImage = new ImageElementWidget(200, 700, 110, 110, 0, 'assets/example-health/broccoli.png', 'B3', 'C9', '38', '');
   $('#app').append(broccoliImage.domElem);
-  const tomatoImage = new ImageElementWidget(1000, 850, 110, 110, 'assets/example-health/tomato.png', 'B3', 'C9', '38', '');
+  const tomatoImage = new ImageElementWidget(1000, 850, 110, 110, 90, 'assets/example-health/tomato.png', 'B3', 'C9', '38', '');
   $('#app').append(tomatoImage.domElem);
 }// buildHealth()
 
 function buildPuzzle() {
   $('#app').empty();
   buildBackButton();
-  const puz1 = new ImageElementWidget(10, 100, 505, 414, 'assets/example-puzzle/1.png', 'B3', 'C9', '38', '');
+  const puz1 = new ImageElementWidget(10, 100, 505, 414, 0, 'assets/example-puzzle/1.png', 'B3', 'C9', '38', '');
   $('#app').append(puz1.domElem);
-  const puz2 = new ImageElementWidget(600, 40, 539, 305, 'assets/example-puzzle/2.png', 'B3', 'C9', '38', '');
+  const puz2 = new ImageElementWidget(600, 40, 539, 305, 0, 'assets/example-puzzle/2.png', 'B3', 'C9', '38', '');
   $('#app').append(puz2.domElem);
-  const puz3 = new ImageElementWidget(200, 10, 574, 655, 'assets/example-puzzle/3.png', 'B3', 'C9', '38', '');
+  const puz3 = new ImageElementWidget(200, 10, 574, 655, 0, 'assets/example-puzzle/3.png', 'B3', 'C9', '38', '');
   $('#app').append(puz3.domElem);
-  const puz4 = new ImageElementWidget(500, 250, 524, 482, 'assets/example-puzzle/4.png', 'B3', 'C9', '38', '');
+  const puz4 = new ImageElementWidget(500, 250, 524, 482, 0, 'assets/example-puzzle/4.png', 'B3', 'C9', '38', '');
   $('#app').append(puz4.domElem);
-  const puz5 = new ImageElementWidget(800, 500, 558, 420, 'assets/example-puzzle/5.png', 'B3', 'C9', '38', '');
+  const puz5 = new ImageElementWidget(800, 500, 558, 420, 0, 'assets/example-puzzle/5.png', 'B3', 'C9', '38', '');
   $('#app').append(puz5.domElem);
-  const puz6 = new ImageElementWidget(850, 150, 429, 475, 'assets/example-puzzle/6.png', 'B3', 'C9', '38', '');
+  const puz6 = new ImageElementWidget(850, 150, 429, 475, 0, 'assets/example-puzzle/6.png', 'B3', 'C9', '38', '');
   $('#app').append(puz6.domElem);
-  const puz7 = new ImageElementWidget(200, 500, 340, 338, 'assets/example-puzzle/7.png', 'B3', 'C9', '38', '');
+  const puz7 = new ImageElementWidget(200, 500, 340, 338, 0, 'assets/example-puzzle/7.png', 'B3', 'C9', '38', '');
   $('#app').append(puz7.domElem);
-  const puz8 = new ImageElementWidget(50, 400, 340, 558, 'assets/example-puzzle/8.png', 'B3', 'C9', '38', '');
+  const puz8 = new ImageElementWidget(50, 400, 340, 558, 0, 'assets/example-puzzle/8.png', 'B3', 'C9', '38', '');
   $('#app').append(puz8.domElem);
 }// buildPuzzle()
 
