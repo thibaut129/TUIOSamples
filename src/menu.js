@@ -37,6 +37,12 @@ function buildHealth() {
   $('#app').append('<div id="main-container"> </div>')
   $('#main-container').append('<div id="healthy-container">  <h1>Healthy</h1> <h1 class="title-bottom">Healthy</h1> </div>');
   $('#main-container').append('<div id="unhealthy-container">  <h1>Unhealthy</h1> <h1 class="title-bottom">Unhealthy</h1> </div>');
+  console.log('Main container height  = ' + $('#main-container').height());
+  console.log('Main container H1 height  = ' + $('#main-container h1').height());
+  var height = $('#main-container').height() - ($('#main-container h1').height() * 3);
+  console.log('Main container H1 height  = ' + height + 'px');
+
+  $('.title-bottom').css('marginTop', height + 'px');
 
     const candiesImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
   $('#app').append(candiesImage.domElem);
