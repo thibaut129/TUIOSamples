@@ -82,12 +82,12 @@ function buildPuzzle() {
 function buildMusic() {
   $('#app').empty();
   buildBackButton();
-  const guitar = new ImageElementWidget(10, 100, 200, 327, 'assets/example-music/guitar.png', 'B3', 'C9', '38', '');
-  $('#app').append(guitar.domElem);
-  const piano = new ImageElementWidget(450, 100, 200, 205, 'assets/example-music/piano.png', 'B3', 'C9', '38', '');
-  $('#app').append(piano.domElem);
-  const saxophone = new ImageElementWidget(800, 100, 100, 228, 'assets/example-music/saxophone.png', 'B3', 'C9', '38', '');
-  $('#app').append(saxophone.domElem);
+  $("#app").append('<img src=\"assets/example-music/guitar.png\" >');
+  $("#app").append('<img src=\"assets/example-music/piano.png\" >');
+  $("#app").append('<img src=\"assets/example-music/saxophone.png\" >');
+
+
+
 }//  buildMusic()
 
 
