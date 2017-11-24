@@ -10,6 +10,10 @@ import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWi
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
 
 
+function getRand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function buildBackButton() {
   $('#app').append('<button id="back-button">Back</button>');
   $('#back-button').on('click', () => {
@@ -30,20 +34,21 @@ function buildDevelopment() {
 function buildHealth() {
   $('#app').empty();
   buildBackButton();
-  $('#app').append('<div id="healthy-container">  <h1>Healthy</h1>  </div>');
-  $('#app').append('<div id="unhealthy-container">  <h1>Unhealthy</h1>  </div>');
+  $('#app').append('<div id="main-container"> </div>')
+  $('#main-container').append('<div id="healthy-container">  <h1>Healthy</h1> <h1 class="title-bottom">Healthy</h1> </div>');
+  $('#main-container').append('<div id="unhealthy-container">  <h1>Unhealthy</h1> <h1 class="title-bottom">Unhealthy</h1> </div>');
 
-  const candiesImage = new ImageElementWidget(50, 400, 110, 110, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
+    const candiesImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/candies.png', 'B3', 'C9', '38', '');
   $('#app').append(candiesImage.domElem);
-  const appleImage = new ImageElementWidget(250, 400, 110, 110, 'assets/example-health/apple.png', 'B3', 'C9', '38', '');
+  const appleImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/apple.png', 'B3', 'C9', '38', '');
   $('#app').append(appleImage.domElem);
-  const bananaImage = new ImageElementWidget(450, 400, 110, 110, 'assets/example-health/banana.png', 'B3', 'C9', '38', '');
+  const bananaImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/banana.png', 'B3', 'C9', '38', '');
   $('#app').append(bananaImage.domElem);
-  const chipsImage = new ImageElementWidget(650, 400, 110, 110, 'assets/example-health/chips.png', 'B3', 'C9', '38', '');
+  const chipsImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/chips.png', 'B3', 'C9', '38', '');
   $('#app').append(chipsImage.domElem);
-  const broccoliImage = new ImageElementWidget(850, 400, 110, 110, 'assets/example-health/broccoli.png', 'B3', 'C9', '38', '');
+  const broccoliImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/broccoli.png', 'B3', 'C9', '38', '');
   $('#app').append(broccoliImage.domElem);
-  const tomatoImage = new ImageElementWidget(1050, 400, 110, 110, 'assets/example-health/tomato.png', 'B3', 'C9', '38', '');
+  const tomatoImage = new ImageElementWidget(getRand(0,1920), getRand(0,1080), 110, 110, 'assets/example-health/tomato.png', 'B3', 'C9', '38', '');
   $('#app').append(tomatoImage.domElem);
 }// buildHealth()
 
@@ -68,12 +73,25 @@ function buildPuzzle() {
   $('#app').append(puz8.domElem);
 }// buildPuzzle()
 
+function buildMusic() {
+  $('#app').empty();
+  buildBackButton();
+  const guitar = new ImageElementWidget(10, 100, 200, 327, 'assets/example-music/guitar.png', 'B3', 'C9', '38', '');
+  $('#app').append(guitar.domElem);
+  const piano = new ImageElementWidget(450, 100, 200, 205, 'assets/example-music/piano.png', 'B3', 'C9', '38', '');
+  $('#app').append(piano.domElem);
+  const saxophone = new ImageElementWidget(800, 100, 100, 228, 'assets/example-music/saxophone.png', 'B3', 'C9', '38', '');
+  $('#app').append(saxophone.domElem);
+}//  buildMusic()
+
 
 export function buildMenu() {
   $('#app').append('<h1> TUIO Showcase </h1>');
   $('#app').append('<button id="development" class="menu-button"> Development </button> </br>');
   $('#app').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
   $('#app').append('<button id="puzzle" class="menu-button"> Puzzle (using ImageElementWidget) </button></br>');
+  $('#app').append('<button id="music" class="menu-button"> Music (using VideoElementWidget) </button></br>');
+
 
   $('#development').on('click', () => {
     buildDevelopment();
@@ -84,4 +102,8 @@ export function buildMenu() {
   $('#puzzle').on('click', () => {
     buildPuzzle();
   });
+  $('#music').on('click', () => {
+    buildMusic();
+  });
+
 }// buildMenu()

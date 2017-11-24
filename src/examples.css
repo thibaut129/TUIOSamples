@@ -63,30 +63,61 @@ h1
   left:10px;
   transition-duration: 0.5s;
   cursor: pointer;
+}
 
+#main-container
+{
+  position:absolute; /*it can be fixed too*/
+  left:0; right:0;
+  top:0; bottom:0;
+  margin:auto;
+
+  /*this to solve "the content will not be cut when the window is smaller than the content": */
+  max-width:50%;
+  height:50%;
+  overflow:auto;
 }
 
 #healthy-container
 {
-  position: absolute;
+  float: left;
+  width:50%;
+  height: 100%;
   color:#4caf50;
+  background-color:#E8F5E9;
+
+  /*
+  position: absolute;
   width:50%;
   height: 40%;
   text-align: center;
-  background-color:#E8F5E9;
   top:0;
-  left:0;
+  left:0;*/
 }
 
 #unhealthy-container
 {
-  position: absolute;
+  float: left;
+  width: 50%;
+  height: 100%;
+
+  color:#f44336;
+  background-color:#FFEBEE;
+
+  /*position: absolute;
   right:0;
   top:0;
   width:50%;
   height: 40%;
   color:#f44336;
-  text-align: center;
-  background-color:#FFEBEE;
+  text-align: center;*/
 
+}
+
+.title-bottom
+{
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari */
+  transform: rotate(180deg);
+  margin-top: 50%;
 }
