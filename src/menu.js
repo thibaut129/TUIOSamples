@@ -89,15 +89,15 @@ function buildMusic() {
   $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/piano.png\" ><div class=\"music-target\"></div> </div>');
   $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/saxophone.png\" ><div class=\"music-target\"></div> </div>');
 
-  const guitarVid = new VideoElementWidget(50, 600, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
+  const guitarVid = new VideoElementWidget(50, 800, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(guitarVid.domElem);
-  const pianoVid = new VideoElementWidget(250, 600, 150, 84, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
+  const pianoVid = new VideoElementWidget(250, 800, 150, 84, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(pianoVid.domElem);
-  const saxophoneVid = new VideoElementWidget(450, 600, 150, 84, 0, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
+  const saxophoneVid = new VideoElementWidget(450, 800, 150, 84, 0, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(saxophoneVid.domElem);
-  const fluteVid = new VideoElementWidget(650, 600, 150, 84, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
+  const fluteVid = new VideoElementWidget(650, 800, 150, 84, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(fluteVid.domElem);
-  const drumsVid = new VideoElementWidget(850, 600, 150, 84, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
+  const drumsVid = new VideoElementWidget(850, 800, 150, 84, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(drumsVid.domElem);
 } // buildMusic()
 
