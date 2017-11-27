@@ -90,9 +90,9 @@ function buildMusic() {
   buildBackButton();
   $('#app').append('<h1>Put the right sound below the instrument</h1>')
   $('#app').append('<div id=\"music-container\"> </div>')
-  $("#music-container").append('<img class=\"\" src=\"assets/example-music/guitar.png\" >');
-  $("#music-container").append('<img src=\"assets/example-music/piano.png\" >');
-  $("#music-container").append('<img src=\"assets/example-music/saxophone.png\" >');
+  $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/guitar.png\" > <div class=\"music-target\"></div> </div>');
+  $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/piano.png\" ><div class=\"music-target\"></div> </div>');
+  $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/saxophone.png\" ><div class=\"music-target\"></div> </div>');
 
   const guitarVid = new VideoElementWidget(50, 600, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(guitarVid.domElem);
