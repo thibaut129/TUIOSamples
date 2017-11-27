@@ -86,8 +86,17 @@ h1
 
 #music-container > *
 {
+  position: relative;
   margin-left: 5%;
   margin-right: 5%;
+  display: inline-block;
+  width: 20%;
+}
+
+.music-target
+{
+  background-color: #BBDEFB;
+  height: 200px;
 
 }
 
