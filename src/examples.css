@@ -78,6 +78,19 @@ h1
   overflow:auto;
 }
 
+#music-container
+{
+  text-align: center;
+}
+
+
+#music-container > *
+{
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
 #healthy-container
 {
   float: left;
