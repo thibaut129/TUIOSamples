@@ -96,9 +96,7 @@ function buildMusic() {
   const fluteVid = new VideoElementWidget(700, 100, 300, 168, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(fluteVid.domElem);
   const drumsVid = new VideoElementWidget(700, 300, 300, 168, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
-  $('#app').append(drumsVid.domElem);
-  const harpVid = new VideoElementWidget(700, 800, 300, 168, 0, 'assets/example-music/harp.mp4', 'B3', 'C9', '38', '3', '');
-  $('#app').append(harpVid.domElem);
+  $('#app').append(drumsVid.domElem);  
 } // buildMusic()
 
 
