@@ -88,7 +88,11 @@ function buildMusic() {
   $("#app").append('<img src=\"assets/example-music/saxophone.png\" >');
 
 //constructor(x, y, width, height, src, tagMove, tagDelete, tagZoom, tagInfo, tagPlayPause, tagVolume)
-  const guitarVid =new VideoElementWidget(100, 600, 300,300, 'assets/example-music/guitar.mp4','B3', 'C9', '38',  '3', '');
+  const guitarVid =new VideoElementWidget(100, 600, 300,168, 'assets/example-music/guitar.mp4','B3', 'C9', '38',  '3', '');
+  $('#app').append(guitarVid.domElem);
+  const pianoVid =new VideoElementWidget(400, 600, 300,168, 'assets/example-music/piano.mp4','B3', 'C9', '38',  '3', '');
+  $('#app').append(guitarVid.domElem);
+  const saxophoneVid =new VideoElementWidget(700, 600, 300,168, 'assets/example-music/saxophone.mp4','B3', 'C9', '38',  '3', '');
   $('#app').append(guitarVid.domElem);
 
 }//  buildMusic()
