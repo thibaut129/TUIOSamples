@@ -87,13 +87,18 @@ function buildMusic() {
   $("#app").append('<img src=\"assets/example-music/piano.png\" >');
   $("#app").append('<img src=\"assets/example-music/saxophone.png\" >');
 
-// constructor(x, y, width, height, src, tagMove, tagDelete, tagZoom, tagInfo, tagPlayPause, tagVolume)
   const guitarVid = new VideoElementWidget(100, 600, 300, 168, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(guitarVid.domElem);
   const pianoVid = new VideoElementWidget(400, 600, 300, 168, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(pianoVid.domElem);
   const saxophoneVid = new VideoElementWidget(700, 600, 300, 168, 0, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(saxophoneVid.domElem);
+  const fluteVid = new VideoElementWidget(700, 100, 300, 168, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
+  $('#app').append(fluteVid.domElem);
+  const drumsVid = new VideoElementWidget(700, 300, 300, 168, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
+  $('#app').append(drumsVid.domElem);
+  const harpVid = new VideoElementWidget(700, 800, 300, 168, 0, 'assets/example-music/harp.mp4', 'B3', 'C9', '38', '3', '');
+  $('#app').append(harpVid.domElem);
 } // buildMusic()
 
 
