@@ -31,7 +31,7 @@ function buildDevelopment() {
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
 
-  const menuWidget = new CircularMenu(100, 100, 500, 500, 0, '6D');
+  const menuWidget = new CircularMenu('6D');
   $('#app').append(menuWidget.domElem);
   menuWidget.startMenu();
 }// buildDevelopment()
