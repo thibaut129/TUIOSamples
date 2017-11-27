@@ -8,6 +8,7 @@ import $ from 'jquery/dist/jquery.min';
 // Import ImageWidget
 import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWidget/ImageElementWidget';
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
+import CircularMenu from 'tuiomanager/widgets/CircularMenu/CircularMenu';
 
 
 function getRand(min, max) {
@@ -29,6 +30,10 @@ function buildDevelopment() {
   const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 'assets/video/video.mp4', 'B3', 'C9', '38',  '3', '');
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
+
+  const menuWidget = new CircularMenu('6D');
+  $('#app').append(menuWidget.domElem);
+  menuWidget.startMenu();
 }// buildDevelopment()
 
 function buildHealth() {
