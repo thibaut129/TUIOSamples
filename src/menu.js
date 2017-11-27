@@ -87,7 +87,9 @@ function buildMusic() {
   $("#app").append('<img src=\"assets/example-music/piano.png\" >');
   $("#app").append('<img src=\"assets/example-music/saxophone.png\" >');
 
-
+//constructor(x, y, width, height, src, tagMove, tagDelete, tagZoom, tagInfo, tagPlayPause, tagVolume)
+  const guitarVid =new VideoElementWidget(100, 600, 300,300, 'assets/example-music/guitar.mp4','B3', 'C9', '38',  '3', '');
+  $('#app').append(guitarVid.domElem);
 
 }//  buildMusic()
 
