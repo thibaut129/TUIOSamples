@@ -71,49 +71,58 @@ function SpawnRotation(difficulty) {
 
 function buildPuzzle(difficulty) {
 console.log("difficulty = " + difficulty);
-
+  let pieces = new Array();
   $('#app').empty();
   buildBackButton();
+
   const puz1 = new ImageElementWidget(10, 100, 505, 414, SpawnRotation(difficulty), 'assets/example-puzzle/1.png', 'B3', 'C9', '38');
-  $('#app').append(puz1.domElem);
-  puz1.canZoom(false, false);
-  puz1.canDelete(false,false);
-  puz1.canRotate(false, false);
+  pieces.push(puz1);
+  //$('#app').append(puz1.domElem);
+
   const puz2 = new ImageElementWidget(600, 40, 539, 305, SpawnRotation(difficulty), 'assets/example-puzzle/2.png', 'B3', 'C9', '38');
-  $('#app').append(puz2.domElem);
-  puz2.canZoom(false, false);
-  puz2.canDelete(false,false);
-  puz2.canRotate(false, false);
+  pieces.push(puz2);
+  //$('#app').append(puz2.domElem);
+
   const puz3 = new ImageElementWidget(200, 10, 574, 655, SpawnRotation(difficulty), 'assets/example-puzzle/3.png', 'B3', 'C9', '38');
-  $('#app').append(puz3.domElem);
-  puz3.canZoom(false, false);
-  puz3.canDelete(false,false);
-  puz3.canRotate(false, false);
+  pieces.push(puz3);
+  //$('#app').append(puz3.domElem);
+
   const puz4 = new ImageElementWidget(500, 250, 524, 482, SpawnRotation(difficulty), 'assets/example-puzzle/4.png', 'B3', 'C9', '38');
-  $('#app').append(puz4.domElem);
-  puz4.canZoom(false, false);
-  puz4.canDelete(false,false);
-  puz4.canRotate(false, false);
+  pieces.push(puz4);
+  //$('#app').append(puz4.domElem);
+
   const puz5 = new ImageElementWidget(800, 500, 558, 420, SpawnRotation(difficulty), 'assets/example-puzzle/5.png', 'B3', 'C9', '38');
-  $('#app').append(puz5.domElem);
-  puz5.canZoom(false, false);
-  puz5.canDelete(false,false);
-  puz5.canRotate(false, false);
+  pieces.push(puz5);
+  //$('#app').append(puz5.domElem);
+
   const puz6 = new ImageElementWidget(850, 150, 429, 475, SpawnRotation(difficulty), 'assets/example-puzzle/6.png', 'B3', 'C9', '38');
-  $('#app').append(puz6.domElem);
-  puz6.canZoom(false, false);
-  puz6.canDelete(false,false);
-  puz6.canRotate(false, false);
+  pieces.push(puz6);
+  //$('#app').append(puz6.domElem);
+
   const puz7 = new ImageElementWidget(200, 500, 340, 338, SpawnRotation(difficulty), 'assets/example-puzzle/7.png', 'B3', 'C9', '38');
-  $('#app').append(puz7.domElem);
-  puz7.canZoom(false, false);
-  puz7.canDelete(false,false);
-  puz7.canRotate(false, false);
+  pieces.push(puz7);
+//  $('#app').append(puz7.domElem);
+
   const puz8 = new ImageElementWidget(50, 400, 340, 558, SpawnRotation(difficulty), 'assets/example-puzzle/8.png', 'B3', 'C9', '38');
-  $('#app').append(puz8.domElem);
-  puz8.canZoom(false, false);
-  puz8.canDelete(false,false);
-  puz8.canRotate(false, false);
+  pieces.push(puz8);
+  //$('#app').append(puz8.domElem);
+
+  for (var i = 0; i < pieces.length; i++) {
+
+    $('#app').append(pieces[i].domElem);
+
+    if(difficulty == 'easy') {
+      pieces[i].canZoom(false, false);
+      pieces[i].canDelete(false,false);
+      pieces[i].canRotate(false, false);
+    }
+    else if (difficulty == 'medium') {
+      pieces[i].canZoom(false, false);
+      pieces[i].canDelete(false,false);
+      pieces[i].canRotate(true, true);
+    }
+  }
+
 }// buildPuzzle()
 
 function buildMusic() {
