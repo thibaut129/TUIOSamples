@@ -34,6 +34,9 @@ function buildDevelopment() {
   const menuWidget = new CircularMenu('6D');
   $('#app').append(menuWidget.domElem);
   menuWidget.startMenu();
+  window.addEventListener('onMenuClick', (e) => {
+    console.log("Item : " + e.indexItem);
+  });
 }// buildDevelopment()
 
 function buildHealth() {
