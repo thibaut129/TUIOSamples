@@ -91,6 +91,7 @@ h1
   margin-top: 20%;
   display: inline-block;
   width: 20%;
+  transform: scale(0.5);
 }
 
 .music-target

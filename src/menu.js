@@ -135,8 +135,6 @@ export function buildMenu() {
   $('#app').append('<button id="development" class="menu-button"> Development </button> </br>');
   $('#app').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
   $('#app').append('<button class="menu-button puzzle" data-difficulty="easy"> Puzzle Easy(using ImageElementWidget) </button></br>');
-  $('#app').append('<button class="menu-button puzzle" data-difficulty="medium"> Puzzle Medimum(using ImageElementWidget) </button></br>');
-
   $('#app').append('<button id="music" class="menu-button"> Music (using VideoElementWidget) </button></br>');
 
 
