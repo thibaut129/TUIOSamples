@@ -80,6 +80,8 @@ h1
 #music-container
 {
   text-align: center;
+  margin-top: 20%;
+
 }
 
 
@@ -88,7 +90,6 @@ h1
   position: relative;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 20%;
   display: inline-block;
   width: 20%;
   transform: scale(0.5);
