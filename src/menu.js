@@ -31,19 +31,31 @@ function buildDevelopment() {
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
 
-  const menuWidget = new CircularMenu('6D');
-  $('#app').append(menuWidget.domElem);
-  menuWidget.addMenuItemText('Facile', '#F00', '');
-  menuWidget.addMenuItemText('Moyen', '#F00', '');
-  menuWidget.addMenuItemText('Difficile', '#FF0', '');
-  menuWidget.addMenuItemText('Difficile', '#F00', '');
-  menuWidget.addMenuItemText('Difficile', '#F0F', '#FF0');
-  menuWidget.addMenuItemText('Difficile', '#F00', '');
-  menuWidget.addMenuItemIcon('fa fa-2x fa-cloud', '#0F0', '#123');
-  menuWidget.addMenuItemText('Difficile', '#F00', '');
-  menuWidget.startMenu();
-  window.addEventListener('onMenuClick', (e) => {
-    console.log("Item : " + e.indexItem);
+  const menuWidgetDev = new CircularMenu('6D', 8);
+  $('#app').append(menuWidgetDev.domElem);
+  menuWidgetDev.addMenuItemText('Facile', '#F00', '', () => {
+    console.log('Facile Texte');
+  });
+  menuWidgetDev.addMenuItemText('Moyen', '#F00', '', () => {
+    console.log('Moyen Texte');
+  });
+  menuWidgetDev.addMenuItemText('Difficile', '#FF0', '', () => {
+    console.log('Difficile Texte');
+  });
+  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-hand-lizard-o', '#F00', '#0F0', () => {
+    console.log('Lizard Hand');
+  });
+  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-star-o', '#F0F', '#FF0', () => {
+    console.log('Facile Icone');
+  });
+  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-star-half-o', '#F00', '', () => {
+    console.log('Moyen Icone');
+  });
+  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-star', '#FFF', '#c62828', () => {
+    console.log('Difficile Icon');
+  });
+  menuWidgetDev.addMenuItemText('Un texte très très long', '#F00', '', () => {
+    console.log('Difficile Texte');
   });
 }// buildDevelopment()
 
@@ -114,18 +126,26 @@ function buildPuzzle(difficulty) {
       pieces[i].canZoom(false, false);
       pieces[i].canDelete(false, false);
       pieces[i].canRotate(false, false);
-    }
-    else if (difficulty === 'medium') {
+    } else if (difficulty === 'medium') {
       pieces[i].canZoom(false, false);
       pieces[i].canDelete(false, false);
       pieces[i].canRotate(true, true);
     }
   }
-  const menuWidget = new CircularMenu('6D');
+  const menuWidget = new CircularMenu('6D', 3);
   $('#app').append(menuWidget.domElem);
-  menuWidget.addMenuItemText('Facile', '#FFF', '#2E7D32');
-  menuWidget.addMenuItemText('Moyen', '#FFF', '#D84315');
-  menuWidget.addMenuItemText('Difficile', '#FFF', '#c62828');
+  menuWidget.addMenuItemText('Facile', '#FFF', '#2E7D32', () => {
+    menuWidget.deleteWidget();
+    buildPuzzle('easy');
+  });
+  menuWidget.addMenuItemText('Moyen', '#FFF', '#D84315', () => {
+    menuWidget.deleteWidget();
+    buildPuzzle('medium');
+  });
+  menuWidget.addMenuItemText('Difficile', '#FFF', '#c62828', () => {
+    menuWidget.deleteWidget();
+    buildPuzzle('difficult');
+  });
 }// buildPuzzle()
 
 function buildMusic() {
