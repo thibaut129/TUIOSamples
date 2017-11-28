@@ -112,19 +112,18 @@ function buildPuzzle(difficulty) {
 function buildMusic() {
   $('#app').empty();
   buildBackButton();
-  $('#app').append('<h1>Put the right sound below the instrument</h1>');
   $('#app').append('<div id="music-container"> </div>');
-  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/guitar.png" > <div class="music-target"></div> </div>');
-  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" ><div class="music-target"></div> </div>');
-  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" ><div class="music-target"></div> </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/guitar.png" >  </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" > ');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" >  </div>');
 
   const fluteVid = new VideoElementWidget(50, 800, 150, 84, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(fluteVid.domElem);
-  const pianoVid = new VideoElementWidget(250, 800, 150, 84, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
+  const pianoVid = new VideoElementWidget(250, 100, 150, 84, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(pianoVid.domElem);
   const drumsVid = new VideoElementWidget(450, 800, 150, 84, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(drumsVid.domElem);
-  const guitarVid = new VideoElementWidget(650, 800, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
+  const guitarVid = new VideoElementWidget(650, 100, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(guitarVid.domElem);
   const saxophoneVid = new VideoElementWidget(850, 800, 150, 84, 0, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(saxophoneVid.domElem);
