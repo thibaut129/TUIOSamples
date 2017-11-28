@@ -12,7 +12,7 @@ import CircularMenu from 'tuiomanager/widgets/CircularMenu/CircularMenu';
 
 
 function getRand(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * ((max - min) + 1)) + min;
 }
 
 function buildBackButton() {
@@ -27,7 +27,7 @@ function buildDevelopment() {
   $('#app').empty();
   buildBackButton();
   const imageWidget = new ImageElementWidget(0, 0, 250, 333, 0, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
-  const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 'assets/video/video.mp4', 'B3', 'C9', '38',  '3', '');
+  const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 'assets/video/video.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(imageWidget.domElem);
   $('#app').append(videoWidget.domElem);
 
@@ -42,15 +42,12 @@ function buildDevelopment() {
 function buildHealth() {
   $('#app').empty();
   buildBackButton();
-  $('#app').append('<div id="main-container"> </div>')
+  $('#app').append('<div id="main-container"> </div>');
   $('#main-container').append('<div id="healthy-container">  <h1>Healthy</h1> <h1 class="title-bottom">Healthy</h1> </div>');
   $('#main-container').append('<div id="unhealthy-container">  <h1>Unhealthy</h1> <h1 class="title-bottom">Unhealthy</h1> </div>');
-  console.log('Main container height  = ' + $('#main-container').height());
-  console.log('Main container H1 height  = ' + $('#main-container h1').height());
-  var height = $('#main-container').height() - ($('#main-container h1').height() * 3);
-  console.log('Main container H1 height  = ' + height + 'px');
+  const height = $('#main-container').height() - ($('#main-container h1').height() * 3);
 
-  $('.title-bottom').css('marginTop', height + 'px');
+  $('.title-bottom').css('marginTop', `${height}px`);
 
   const candiesImage = new ImageElementWidget(100, 150, 110, 110, 0, 'assets/example-health/candies.png', 'B3', 'C9', '38');
   candiesImage.disable(true);
@@ -68,79 +65,58 @@ function buildHealth() {
 }// buildHealth()
 
 function SpawnRotation(difficulty) {
-
-  if(difficulty == 'medium') {
+  if (difficulty === 'medium') {
     return getRand(0, 360);
   }
-
   return 0;
-
 }//  SpawnRotation()
 
 function buildPuzzle(difficulty) {
-console.log("difficulty = " + difficulty);
-  let pieces = new Array();
+  const pieces = [];
   $('#app').empty();
   buildBackButton();
 
   const puz1 = new ImageElementWidget(10, 100, 505, 414, SpawnRotation(difficulty), 'assets/example-puzzle/1.png', 'B3', 'C9', '38');
   pieces.push(puz1);
-  //$('#app').append(puz1.domElem);
-
   const puz2 = new ImageElementWidget(600, 40, 539, 305, SpawnRotation(difficulty), 'assets/example-puzzle/2.png', 'B3', 'C9', '38');
   pieces.push(puz2);
-  //$('#app').append(puz2.domElem);
-
   const puz3 = new ImageElementWidget(200, 10, 574, 655, SpawnRotation(difficulty), 'assets/example-puzzle/3.png', 'B3', 'C9', '38');
   pieces.push(puz3);
-  //$('#app').append(puz3.domElem);
-
   const puz4 = new ImageElementWidget(500, 250, 524, 482, SpawnRotation(difficulty), 'assets/example-puzzle/4.png', 'B3', 'C9', '38');
   pieces.push(puz4);
-  //$('#app').append(puz4.domElem);
-
   const puz5 = new ImageElementWidget(800, 500, 558, 420, SpawnRotation(difficulty), 'assets/example-puzzle/5.png', 'B3', 'C9', '38');
   pieces.push(puz5);
-  //$('#app').append(puz5.domElem);
-
   const puz6 = new ImageElementWidget(850, 150, 429, 475, SpawnRotation(difficulty), 'assets/example-puzzle/6.png', 'B3', 'C9', '38');
   pieces.push(puz6);
-  //$('#app').append(puz6.domElem);
-
   const puz7 = new ImageElementWidget(200, 500, 340, 338, SpawnRotation(difficulty), 'assets/example-puzzle/7.png', 'B3', 'C9', '38');
   pieces.push(puz7);
-//  $('#app').append(puz7.domElem);
-
   const puz8 = new ImageElementWidget(50, 400, 340, 558, SpawnRotation(difficulty), 'assets/example-puzzle/8.png', 'B3', 'C9', '38');
   pieces.push(puz8);
-  //$('#app').append(puz8.domElem);
 
-  for (var i = 0; i < pieces.length; i++) {
-
+  for (let i = 0; i < pieces.length; i += 1) {
     $('#app').append(pieces[i].domElem);
 
-    if(difficulty == 'easy') {
+    if (difficulty === 'easy') {
       pieces[i].canZoom(false, false);
-      pieces[i].canDelete(false,false);
+      pieces[i].canDelete(false, false);
       pieces[i].canRotate(false, false);
     }
-    else if (difficulty == 'medium') {
+    else if (difficulty === 'medium') {
       pieces[i].canZoom(false, false);
-      pieces[i].canDelete(false,false);
+      pieces[i].canDelete(false, false);
       pieces[i].canRotate(true, true);
     }
   }
-
 }// buildPuzzle()
 
 function buildMusic() {
   $('#app').empty();
   buildBackButton();
-  $('#app').append('<h1>Put the right sound below the instrument</h1>')
-  $('#app').append('<div id=\"music-container\"> </div>')
-  $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/guitar.png\" > <div class=\"music-target\"></div> </div>');
-  $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/piano.png\" ><div class=\"music-target\"></div> </div>');
-  $("#music-container").append('<div class=\"music-subcontainer\"><img src=\"assets/example-music/saxophone.png\" ><div class=\"music-target\"></div> </div>');
+  $('#app').append('<h1>Put the right sound below the instrument</h1>');
+  $('#app').append('<div id="music-container"> </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/guitar.png" > <div class="music-target"></div> </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" ><div class="music-target"></div> </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" ><div class="music-target"></div> </div>');
 
   const fluteVid = new VideoElementWidget(50, 800, 150, 84, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(fluteVid.domElem);
@@ -172,10 +148,9 @@ export function buildMenu() {
     buildHealth();
   });
   $('.puzzle').on('click', (elem) => {
-    buildPuzzle($(elem.target).data("difficulty"));
+    buildPuzzle($(elem.target).data('difficulty'));
   });
   $('#music').on('click', () => {
     buildMusic();
   });
-
 }// buildMenu()
