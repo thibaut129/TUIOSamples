@@ -78,26 +78,33 @@ function SpawnRotation(difficulty) {
   return 0;
 }//  SpawnRotation()
 
+function SpawnScale(difficulty) {
+  if(difficulty === 'difficult') {
+    return getRand(0.5, 1.4);
+  }
+  return 1;
+}// SpawnRotation()
+
 function buildPuzzle(difficulty) {
   const pieces = [];
   $('#app').empty();
   buildBackButton();
 
-  const puz1 = new ImageElementWidget(10, 100, 505, 414, SpawnRotation(difficulty), 1, 'assets/example-puzzle/1.png', 'B3', 'C9', '38');
+  const puz1 = new ImageElementWidget(10, 100, 505, 414, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/1.png', 'B3', 'C9', '38');
   pieces.push(puz1);
-  const puz2 = new ImageElementWidget(600, 40, 539, 305, SpawnRotation(difficulty), 1, 'assets/example-puzzle/2.png', 'B3', 'C9', '38');
+  const puz2 = new ImageElementWidget(600, 40, 539, 305, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/2.png', 'B3', 'C9', '38');
   pieces.push(puz2);
-  const puz3 = new ImageElementWidget(200, 10, 574, 655, SpawnRotation(difficulty), 1, 'assets/example-puzzle/3.png', 'B3', 'C9', '38');
+  const puz3 = new ImageElementWidget(200, 10, 574, 655, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/3.png', 'B3', 'C9', '38');
   pieces.push(puz3);
-  const puz4 = new ImageElementWidget(500, 250, 524, 482, SpawnRotation(difficulty), 1, 'assets/example-puzzle/4.png', 'B3', 'C9', '38');
+  const puz4 = new ImageElementWidget(500, 250, 524, 482, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/4.png', 'B3', 'C9', '38');
   pieces.push(puz4);
-  const puz5 = new ImageElementWidget(800, 500, 558, 420, SpawnRotation(difficulty), 1, 'assets/example-puzzle/5.png', 'B3', 'C9', '38');
+  const puz5 = new ImageElementWidget(800, 500, 558, 420, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/5.png', 'B3', 'C9', '38');
   pieces.push(puz5);
-  const puz6 = new ImageElementWidget(850, 150, 429, 475, SpawnRotation(difficulty), 1, 'assets/example-puzzle/6.png', 'B3', 'C9', '38');
+  const puz6 = new ImageElementWidget(850, 150, 429, 475, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/6.png', 'B3', 'C9', '38');
   pieces.push(puz6);
-  const puz7 = new ImageElementWidget(200, 500, 340, 338, SpawnRotation(difficulty), 1, 'assets/example-puzzle/7.png', 'B3', 'C9', '38');
+  const puz7 = new ImageElementWidget(200, 500, 340, 338, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/7.png', 'B3', 'C9', '38');
   pieces.push(puz7);
-  const puz8 = new ImageElementWidget(50, 400, 340, 558, SpawnRotation(difficulty), 1, 'assets/example-puzzle/8.png', 'B3', 'C9', '38');
+  const puz8 = new ImageElementWidget(50, 400, 340, 558, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/8.png', 'B3', 'C9', '38');
   pieces.push(puz8);
 
   for (let i = 0; i < pieces.length; i += 1) {
