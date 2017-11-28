@@ -67,12 +67,11 @@ h1
 
 #main-container
 {
-  position:absolute; /*it can be fixed too*/
+  position:absolute;
   left:0; right:0;
   top:0; bottom:0;
   margin:auto;
 
-  /*this to solve "the content will not be cut when the window is smaller than the content": */
   max-width:50%;
   height:50%;
   overflow:auto;
@@ -89,6 +88,7 @@ h1
   position: relative;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: 20%;
   display: inline-block;
   width: 20%;
 }

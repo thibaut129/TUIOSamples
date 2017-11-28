@@ -100,51 +100,32 @@ function buildPuzzle(difficulty) {
       pieces[i].canZoom(false, false);
       pieces[i].canDelete(false, false);
       pieces[i].canRotate(false, false);
-    } else if (difficulty === 'medium') {
+    }
+    else if (difficulty === 'medium') {
       pieces[i].canZoom(false, false);
       pieces[i].canDelete(false, false);
       pieces[i].canRotate(true, true);
     }
   }
-
-  const menuWidget = new CircularMenu('6D');
-  $('#app').append(menuWidget.domElem);
-  menuWidget.addMenuItem('Facile');
-  menuWidget.addMenuItem('Moyen');
-  menuWidget.addMenuItem('Difficile');
-  menuWidget.startMenu();
-  window.addEventListener('onMenuClick', (e) => {
-    for (let i = 0; i < pieces.length; i += 1) {
-      pieces[i].deleteWidget();
-    }
-    menuWidget.deleteWidget();
-    if (e.indexItem === 0) {
-      buildPuzzle('easy');
-    } else if (e.indexItem === 1) {
-      buildPuzzle('medium');
-    } else if (e.indexItem === 2) {
-      buildPuzzle('medium');
-    }
-  });
 }// buildPuzzle()
 
 function buildMusic() {
   $('#app').empty();
   buildBackButton();
   $('#app').append('<div id="music-container"> </div>');
-  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/guitar.png" >  </div>');
-  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" > ');
-  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" >  </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/guitar.png" > <div class="music-target"></div> </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" ><div class="music-target"></div> </div>');
+  $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" ><div class="music-target"></div> </div>');
 
-  const fluteVid = new VideoElementWidget(50, 800, 150, 84, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
+  const fluteVid = new VideoElementWidget(250, 800, 150, 84, 0, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(fluteVid.domElem);
-  const pianoVid = new VideoElementWidget(250, 100, 150, 84, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
+  const pianoVid = new VideoElementWidget(450, 100, 150, 84, 0, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(pianoVid.domElem);
-  const drumsVid = new VideoElementWidget(450, 800, 150, 84, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
+  const drumsVid = new VideoElementWidget(650, 800, 150, 84, 0, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(drumsVid.domElem);
-  const guitarVid = new VideoElementWidget(650, 100, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
+  const guitarVid = new VideoElementWidget(850, 100, 150, 84, 0, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(guitarVid.domElem);
-  const saxophoneVid = new VideoElementWidget(850, 800, 150, 84, 0, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
+  const saxophoneVid = new VideoElementWidget(1050, 800, 150, 84, 0, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(saxophoneVid.domElem);
 } // buildMusic()
 
@@ -154,6 +135,7 @@ export function buildMenu() {
   $('#app').append('<button id="development" class="menu-button"> Development </button> </br>');
   $('#app').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
   $('#app').append('<button class="menu-button puzzle" data-difficulty="easy"> Puzzle Easy(using ImageElementWidget) </button></br>');
+  $('#app').append('<button class="menu-button puzzle" data-difficulty="medium"> Puzzle Medimum(using ImageElementWidget) </button></br>');
 
   $('#app').append('<button id="music" class="menu-button"> Music (using VideoElementWidget) </button></br>');
 
