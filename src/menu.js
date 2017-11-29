@@ -84,7 +84,7 @@ function buildHealth() {
 }// buildHealth()
 
 function SpawnRotation(difficulty) {
-  if (difficulty === 'medium') {
+  if (difficulty === 'medium' || difficulty === 'difficult') {
     return getRand(0, 360);
   }
   return 0;
@@ -156,15 +156,15 @@ function buildMusic() {
   $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" ><div class="music-target"></div> </div>');
   $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" ><div class="music-target"></div> </div>');
 
-  const fluteVid = new VideoElementWidget(250, 800, 150, 84, 0, 1, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
+  const fluteVid = new VideoElementWidget(250, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(fluteVid.domElem);
-  const pianoVid = new VideoElementWidget(450, 100, 150, 84, 0, 1, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
+  const pianoVid = new VideoElementWidget(450, 100, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(pianoVid.domElem);
-  const drumsVid = new VideoElementWidget(650, 800, 150, 84, 0, 1, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
+  const drumsVid = new VideoElementWidget(650, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(drumsVid.domElem);
-  const guitarVid = new VideoElementWidget(850, 100, 150, 84, 0, 1, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
+  const guitarVid = new VideoElementWidget(850, 100, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(guitarVid.domElem);
-  const saxophoneVid = new VideoElementWidget(1050, 800, 150, 84, 0, 1, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
+  const saxophoneVid = new VideoElementWidget(1050, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
   $('#app').append(saxophoneVid.domElem);
 } // buildMusic()
 
@@ -173,7 +173,7 @@ export function buildMenu() {
   $('#app').append('<h1> TUIO Showcase </h1>');
   $('#app').append('<button id="development" class="menu-button"> Development </button> </br>');
   $('#app').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
-  $('#app').append('<button class="menu-button puzzle" data-difficulty="easy"> Puzzle Easy(using ImageElementWidget) </button></br>');
+  $('#app').append('<button class="menu-button puzzle" data-difficulty="easy"> Puzzle (using ImageElementWidget) </button></br>');
   $('#app').append('<button id="music" class="menu-button"> Music (using VideoElementWidget) </button></br>');
 
 
