@@ -155,14 +155,17 @@ function buildPuzzle(difficulty) {
   AddWidgetToScreen(menuWidget);
   menuWidget.addMenuItemText('Facile', '#FFF', '#2E7D32', () => {
     menuWidget.deleteWidget();
+    RemoveWidgets();
     buildPuzzle('easy');
   });
   menuWidget.addMenuItemText('Moyen', '#FFF', '#D84315', () => {
     menuWidget.deleteWidget();
+    RemoveWidgets();
     buildPuzzle('medium');
   });
   menuWidget.addMenuItemText('Difficile', '#FFF', '#c62828', () => {
     menuWidget.deleteWidget();
+    RemoveWidgets();
     buildPuzzle('difficult');
   });
 }// buildPuzzle()
