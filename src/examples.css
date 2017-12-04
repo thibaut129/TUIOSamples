@@ -133,3 +133,13 @@ h1
   transform: rotate(180deg);
 
 }
+
+.library-stack
+{
+  display: table;
+
+}
+.stack-element
+{
+//margin: auto;
+}

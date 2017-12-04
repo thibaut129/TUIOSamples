@@ -9,6 +9,7 @@ import $ from 'jquery/dist/jquery.min';
 import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWidget/ImageElementWidget';
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
 import CircularMenu from 'tuiomanager/widgets/CircularMenu/CircularMenu';
+import LibraryStack from 'tuiomanager/widgets/Library/LibraryStack/LibraryStack'
 
 let widgets = [];
 
@@ -46,6 +47,20 @@ function buildDevelopment() {
   AddWidgetToScreen(imageWidget);
   const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 1, 'assets/video/video.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget);
+
+  //test de LibraryStack
+  const libstack = new LibraryStack(600,300, 300, 300);
+  AddWidgetToScreen(libstack);
+  const imageWidget2 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
+  const imageWidget3 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
+  const imageWidget4 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
+  const imageWidget5 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
+
+  libstack.addElementWidget(imageWidget2);
+  libstack.addElementWidget(imageWidget3);
+  libstack.addElementWidget(imageWidget4);
+  libstack.addElementWidget(imageWidget5);
+
 
 
   const menuWidgetDev = new CircularMenu('6D', 8);
