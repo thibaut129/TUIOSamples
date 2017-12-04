@@ -74,7 +74,7 @@ function buildDevelopment() {
   const cloud = new MenuItem('fa fa-2x fa-cloud', '#c62828', '#fff', true);
   cloud.setTouchCallback(() => {
       // Do something
-  }); 
+  });
   const difficulties = new MenuItem('Difficultés', '#FFF', '#000', false);
   difficulties.addChild(facile);
   difficulties.addChild(moyen);
