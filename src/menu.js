@@ -8,8 +8,10 @@ import $ from 'jquery/dist/jquery.min';
 // Import ImageWidget
 import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWidget/ImageElementWidget';
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
+//import LibraryBar from 'tuiomanager/widgets/Library/LibraryBar/LibraryBar';
 import CircularMenu from 'tuiomanager/widgets/CircularMenu/CircularMenu';
 import LibraryStack from 'tuiomanager/widgets/Library/LibraryStack/LibraryStack'
+import MenuItem from 'tuiomanager/widgets/CircularMenu/MenuItem';
 
 let widgets = [];
 
@@ -55,41 +57,34 @@ function buildDevelopment() {
   const imageWidget3 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   const imageWidget4 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   const imageWidget5 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
+  const facile = new MenuItem('Facile', '#2E7D32', '#FFF', false);
+  facile.setTouchCallback(() => {
+      // Do something
+  });
 
   libstack.addElementWidget(imageWidget2);
   libstack.addElementWidget(imageWidget3);
   libstack.addElementWidget(imageWidget4);
   libstack.addElementWidget(imageWidget5);
+  const moyen = new MenuItem('Moyen', '#D84315', '#FFF', false);
+  moyen.setTouchCallback(() => {
+      // Do something
+  });
 
-
-
-  const menuWidgetDev = new CircularMenu('6D', 8);
-  //$('#app').append(menuWidgetDev.domElem);
-  AddWidgetToScreen(menuWidgetDev);
-  menuWidgetDev.addMenuItemText('Facile', '#F00', '', () => {
-    console.log('Facile Texte');
-  });
-  menuWidgetDev.addMenuItemText('Moyen', '#F00', '', () => {
-    console.log('Moyen Texte');
-  });
-  menuWidgetDev.addMenuItemText('Difficile', '#FF0', '', () => {
-    console.log('Difficile Texte');
-  });
-  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-hand-lizard-o', '#F00', '#0F0', () => {
-    console.log('Lizard Hand');
-  });
-  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-star-o', '#F0F', '#FF0', () => {
-    console.log('Facile Icone');
-  });
-  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-star-half-o', '#F00', '', () => {
-    console.log('Moyen Icone');
-  });
-  menuWidgetDev.addMenuItemIcon('fa fa-2x fa-star', '#FFF', '#c62828', () => {
-    console.log('Difficile Icon');
-  });
-  menuWidgetDev.addMenuItemText('Un texte très très long', '#F00', '', () => {
-    console.log('Difficile Texte');
-  });
+  const cloud = new MenuItem('fa fa-2x fa-cloud', '#c62828', '#fff', true);
+  cloud.setTouchCallback(() => {
+      // Do something
+  }); 
+  const difficulties = new MenuItem('Difficultés', '#FFF', '#000', false);
+  difficulties.addChild(facile);
+  difficulties.addChild(moyen);
+  const icones = new MenuItem('Icones', '#FFF', '#000', false);
+  icones.addChild(cloud);
+  const root = new MenuItem('root', '', '', false);
+  root.addChild(difficulties);
+  root.addChild(icones);
+  const circularmenu = new CircularMenu('6D', root);
+  AddWidgetToScreen(circularmenu);
 }// buildDevelopment()
 
 function buildHealth() {
@@ -132,7 +127,7 @@ function SpawnScale(difficulty) {
 
 function buildPuzzle(difficulty) {
   const pieces = [];
-  $('#example-container').empty();
+  RemoveWidgets();
   buildBackButton();
 
   const puz1 = new ImageElementWidget(10, 100, 505, 414, SpawnRotation(difficulty), SpawnScale(difficulty), 'assets/example-puzzle/1.png', 'B3', 'C9', '38');
@@ -165,24 +160,6 @@ function buildPuzzle(difficulty) {
       pieces[i].canRotate(true, true);
     }
   }
-  const menuWidget = new CircularMenu('6D', 3);
-  //$('#app').append(menuWidget.domElem);
-  AddWidgetToScreen(menuWidget);
-  menuWidget.addMenuItemText('Facile', '#FFF', '#2E7D32', () => {
-    menuWidget.deleteWidget();
-    RemoveWidgets();
-    buildPuzzle('easy');
-  });
-  menuWidget.addMenuItemText('Moyen', '#FFF', '#D84315', () => {
-    menuWidget.deleteWidget();
-    RemoveWidgets();
-    buildPuzzle('medium');
-  });
-  menuWidget.addMenuItemText('Difficile', '#FFF', '#c62828', () => {
-    menuWidget.deleteWidget();
-    RemoveWidgets();
-    buildPuzzle('difficult');
-  });
 }// buildPuzzle()
 
 function buildMusic() {
@@ -193,18 +170,54 @@ function buildMusic() {
   $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/piano.png" ><div class="music-target"></div> </div>');
   $('#music-container').append('<div class="music-subcontainer"><img src="assets/example-music/saxophone.png" ><div class="music-target"></div> </div>');
 
-  const fluteVid = new VideoElementWidget(250, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3', '');
+  const fluteVid = new VideoElementWidget(250, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/flute.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(fluteVid);
-  const pianoVid = new VideoElementWidget(450, 100, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3', '');
-  AddWidgetToScreen(fluteVid);
-  const drumsVid = new VideoElementWidget(650, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3', '');
-  AddWidgetToScreen(fluteVid);
-  const guitarVid = new VideoElementWidget(850, 100, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3', '');
-  AddWidgetToScreen(fluteVid);
-  const saxophoneVid = new VideoElementWidget(1050, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3', '');
-  AddWidgetToScreen(fluteVid);
+  const pianoVid = new VideoElementWidget(450, 100, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/piano.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(pianoVid);
+  const drumsVid = new VideoElementWidget(650, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/drums.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(drumsVid);
+  const guitarVid = new VideoElementWidget(850, 100, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/guitar.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(guitarVid);
+  const saxophoneVid = new VideoElementWidget(1050, 800, 150, 84, SpawnRotation('medium'), 1, 'assets/example-music/saxophone.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(saxophoneVid);
 } // buildMusic()
 
+function buildCircularMenuPuzzles() {
+  const facile = new MenuItem('Facile', '#2E7D32', '#FFF', false);
+  facile.setTouchCallback(() => {
+    buildPuzzle('easy');
+  });
+  const moyen = new MenuItem('Moyen', '#D84315', '#FFF', false);
+  moyen.setTouchCallback(() => {
+    buildPuzzle('medium');
+  });
+  const difficile = new MenuItem('Difficile', '#c62828', '#fff', false);
+  difficile.setTouchCallback(() => {
+    buildPuzzle('difficult');
+  });
+  const puzzle1 = new MenuItem('L\'école d\'Athènes', '#3F51B5', '#fff', false);
+  puzzle1.setTouchCallback(() => {
+    buildPuzzle('easy');
+  });
+  const puzzle2 = new MenuItem('La Joconde', '#009688', '#fff', false);
+  puzzle2.setTouchCallback(() => {
+    console.log('NOUVEAU PUZZLE');
+  });
+
+  const difficulties = new MenuItem('Difficultés', '#FFF', '#000', false);
+  difficulties.addChild(facile);
+  difficulties.addChild(moyen);
+  difficulties.addChild(difficile);
+  const puzzles = new MenuItem('Puzzles', '#FFF', '#000', false);
+  puzzles.addChild(puzzle1);
+  puzzles.addChild(puzzle2);
+  const root = new MenuItem('root', '#0F0', '#0FF', false);
+  root.addChild(difficulties);
+  root.addChild(puzzles);
+  const circularmenu = new CircularMenu('6D', root);
+  console.log(root);
+  $('#app').append(circularmenu.domElem);
+}
 
 export function buildMenu() {
   $('#example-container').append('<h1> TUIO Showcase </h1>');
@@ -221,6 +234,7 @@ export function buildMenu() {
     buildHealth();
   });
   $('.puzzle').on('click', (elem) => {
+    buildCircularMenuPuzzles();
     buildPuzzle($(elem.target).data('difficulty'));
   });
   $('#music').on('click', () => {
