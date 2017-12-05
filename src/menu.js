@@ -47,6 +47,9 @@ function buildDevelopment() {
   buildBackButton();
   const imageWidget = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget);
+  const imageWidgetA = new ImageElementWidget(600, 50, 200, 210, 0, 2, 'assets/joy.png', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidgetA);
+
   const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 1, 'assets/video/video.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget);
 
