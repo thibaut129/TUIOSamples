@@ -220,7 +220,23 @@ function buildCircularMenuPuzzles() {
   const circularmenu = new CircularMenu('6D', root);
   console.log(root);
   $('#app').append(circularmenu.domElem);
-}
+}// buildMusic
+
+function buildUserTest() {
+
+  // Créer un ImageElementWidget seulement déplaçable
+
+  // Créer un ImageElementWidget déplaçable, pivotable, et redimensionnable
+
+  // Créer une stack à ImageElementWidget et y ajouter les deux ImageElementWidget créés avant
+
+  // Créer un VideoElementWidget seulement déplaçable
+
+  // Créer un VideoElementWidget déplaçable, pivotable, et redimensionnable
+
+  //Créer une LibraryStack à VideoElementWidget et y ajouter les deux VideoElementWidget créés avant
+
+}// buildUserTest
 
 export function buildMenu() {
   $('#example-container').append('<h1> TUIO Showcase </h1>');
@@ -228,6 +244,7 @@ export function buildMenu() {
   $('#example-container').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
   $('#example-container').append('<button class="menu-button puzzle" data-difficulty="easy"> Puzzle (using ImageElementWidget) </button></br>');
   $('#example-container').append('<button id="music" class="menu-button"> Music (using VideoElementWidget) </button></br>');
+  $('#example-container').append('<button id="user-test" class="menu-button"> User test </button></br>');
 
 
   $('#development').on('click', () => {
