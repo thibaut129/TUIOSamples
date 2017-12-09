@@ -222,19 +222,78 @@ function buildCircularMenuPuzzles() {
   $('#app').append(circularmenu.domElem);
 }// buildMusic
 
+function buildDevelopmentTest() {
+  RemoveWidgets();
+
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  //!!!! USE AddWidgetToScreen( yourwidget) to add a widget to the screen !!!!!!!
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    // Créer un ImageElementWidget seulement déplaçable
+
+    // Créer un ImageElementWidget déplaçable, pivotable, et redimensionnable
+
+    // Créer une stack à ImageElementWidget et y ajouter les deux ImageElementWidget créés avant
+
+    // Créer un VideoElementWidget seulement déplaçable
+
+    // Créer un VideoElementWidget déplaçable, pivotable, et redimensionnable
+
+    //Créer une LibraryStack à VideoElementWidget et y ajouter les deux VideoElementWidget créés avant
+
+
+
+}//  buildDevelopmentTest()
+
 function buildUserTest() {
+  RemoveWidgets();
+  const imageWidget1 = new ImageElementWidget(0, 0, 250, 333, 0, 0.5, 'assets/user-test/1.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget1);
+  const imageWidget2 = new ImageElementWidget(0, 50, 250, 333, 0, 0.5, 'assets/user-test/2.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget2);
+  const imageWidget3 = new ImageElementWidget(0, 10, 250, 333, 0, 0.5, 'assets/user-test/3.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget3);
+  const imageWidget4 = new ImageElementWidget(0, 150, 250, 333, 0, 0.5, 'assets/user-test/4.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget4);
+  const imageWidget5 = new ImageElementWidget(0, 200, 250, 333, 0, 0.5, 'assets/user-test/5.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget5);
+  const imageWidget6 = new ImageElementWidget(0, 250, 250, 333, 0, 0.5, 'assets/user-test/6.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget6);
+  const imageWidget7 = new ImageElementWidget(0, 300, 250, 333, 0, 0.5, 'assets/user-test/7.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget7);
+  const imageWidget8 = new ImageElementWidget(0, 350, 250, 333, 0, 0.5, 'assets/user-test/8.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget8);
+  const imageWidget9 = new ImageElementWidget(0, 400, 250, 333, 0, 0.5, 'assets/user-test/9.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget9);
+  const imageWidget10 = new ImageElementWidget(0, 450, 250, 333, 0, 0.5, 'assets/user-test/10.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget10);
+  const imageWidget11 = new ImageElementWidget(0, 500, 250, 333, 0, 0.5, 'assets/user-test/11.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget11);
+  const imageWidget12 = new ImageElementWidget(0, 550, 250, 333, 0, 0.5, 'assets/user-test/12.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget12);
+  const imageWidget13 = new ImageElementWidget(0, 600, 250, 333, 0, 0.5, 'assets/user-test/13.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget13);
+  const imageWidget14 = new ImageElementWidget(0, 650, 250, 333, 0, 0.5, 'assets/user-test/14.jpg', 'B3', 'C9', '38');
+  AddWidgetToScreen(imageWidget14);
+//
+  const videoWidget1 = new VideoElementWidget(300, 50, 250, 140, 0, 1, 'assets/user-test/boi.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(videoWidget1);
+  const videoWidget2 = new VideoElementWidget(400, 50, 250, 140, 0, 1, 'assets/user-test/crash.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(videoWidget2);
+  const videoWidget3 = new VideoElementWidget(500, 50, 250, 140, 0, 1, 'assets/user-test/hey.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(videoWidget3);
+  const videoWidget4 = new VideoElementWidget(600, 50, 250, 140, 0, 1, 'assets/user-test/kazoo.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(videoWidget4);
+  const videoWidget5 = new VideoElementWidget(700, 50, 250, 140, 0, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '3');
+  AddWidgetToScreen(videoWidget5);
 
-  // Créer un ImageElementWidget seulement déplaçable
 
-  // Créer un ImageElementWidget déplaçable, pivotable, et redimensionnable
 
-  // Créer une stack à ImageElementWidget et y ajouter les deux ImageElementWidget créés avant
+  //Stack site web
+  //Stack vidéo
+  //Stack poubelle
 
-  // Créer un VideoElementWidget seulement déplaçable
 
-  // Créer un VideoElementWidget déplaçable, pivotable, et redimensionnable
-
-  //Créer une LibraryStack à VideoElementWidget et y ajouter les deux VideoElementWidget créés avant
 
 }// buildUserTest
 
@@ -244,6 +303,7 @@ export function buildMenu() {
   $('#example-container').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
   $('#example-container').append('<button class="menu-button puzzle" data-difficulty="easy"> Puzzle (using ImageElementWidget) </button></br>');
   $('#example-container').append('<button id="music" class="menu-button"> Music (using VideoElementWidget) </button></br>');
+  $('#example-container').append('<button id="development-test" class="menu-button"> Development test </button></br>');
   $('#example-container').append('<button id="user-test" class="menu-button"> User test </button></br>');
 
 
@@ -259,5 +319,13 @@ export function buildMenu() {
   });
   $('#music').on('click', () => {
     buildMusic();
+  });
+
+  $('#development-test').on('click', () => {
+    buildDevelopmentTest();
+  });
+
+  $('#user-test').on('click', () => {
+    buildUserTest();
   });
 }// buildMenu()
