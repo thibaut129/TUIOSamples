@@ -12,11 +12,13 @@ import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWi
 import CircularMenu from 'tuiomanager/widgets/CircularMenu/CircularMenu';
 import LibraryStack from 'tuiomanager/widgets/Library/LibraryStack/LibraryStack'
 import MenuItem from 'tuiomanager/widgets/CircularMenu/MenuItem';
+import { buildNoobWork } from './dev-test';
 
 let widgets = [];
 
 function AddWidgetToScreen(widget) {
-  $('#example-container').append(widget.domElem);
+//  $('#example-container').append(widget.domElem);
+  widget.addTo('#example-container');
   widgets.push(widget);
 }//AddWidgetToScreen()
 
@@ -224,56 +226,39 @@ function buildCircularMenuPuzzles() {
 
 function buildDevelopmentTest() {
   RemoveWidgets();
-
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //!!!! USE AddWidgetToScreen( yourwidget) to add a widget to the screen !!!!!!!
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    // Créer un ImageElementWidget seulement déplaçable
-
-    // Créer un ImageElementWidget déplaçable, pivotable, et redimensionnable
-
-    // Créer une stack à ImageElementWidget et y ajouter les deux ImageElementWidget créés avant
-
-    // Créer un VideoElementWidget seulement déplaçable
-
-    // Créer un VideoElementWidget déplaçable, pivotable, et redimensionnable
-
-    //Créer une LibraryStack à VideoElementWidget et y ajouter les deux VideoElementWidget créés avant
-
-
+  buildNoobWork();
 
 }//  buildDevelopmentTest()
 
 function buildUserTest() {
   RemoveWidgets();
-  const imageWidget1 = new ImageElementWidget(0, 0, 250, 333, 0, 0.5, 'assets/user-test/1.jpg', 'B3', 'C9', '38');
+  const imageWidget1 = new ImageElementWidget(0, 0, 640, 960, 0, 0.1, 'assets/user-test/1.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget1);
-  const imageWidget2 = new ImageElementWidget(0, 50, 250, 333, 0, 0.5, 'assets/user-test/2.jpg', 'B3', 'C9', '38');
+  const imageWidget2 = new ImageElementWidget(0, 50, 2048, 1365, 0, 0.1, 'assets/user-test/2.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget2);
-  const imageWidget3 = new ImageElementWidget(0, 10, 250, 333, 0, 0.5, 'assets/user-test/3.jpg', 'B3', 'C9', '38');
+  const imageWidget3 = new ImageElementWidget(0, 10, 2048, 1365, 0, 0.1, 'assets/user-test/3.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget3);
-  const imageWidget4 = new ImageElementWidget(0, 150, 250, 333, 0, 0.5, 'assets/user-test/4.jpg', 'B3', 'C9', '38');
+  const imageWidget4 = new ImageElementWidget(0, 150, 2048, 1365, 0, 0.1, 'assets/user-test/4.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget4);
-  const imageWidget5 = new ImageElementWidget(0, 200, 250, 333, 0, 0.5, 'assets/user-test/5.jpg', 'B3', 'C9', '38');
+  const imageWidget5 = new ImageElementWidget(0, 200, 2048, 1365, 0, 0.1, 'assets/user-test/5.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget5);
-  const imageWidget6 = new ImageElementWidget(0, 250, 250, 333, 0, 0.5, 'assets/user-test/6.jpg', 'B3', 'C9', '38');
+  const imageWidget6 = new ImageElementWidget(0, 250, 2048, 1365, 0, 0.1, 'assets/user-test/6.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget6);
-  const imageWidget7 = new ImageElementWidget(0, 300, 250, 333, 0, 0.5, 'assets/user-test/7.jpg', 'B3', 'C9', '38');
+  const imageWidget7 = new ImageElementWidget(0, 300, 2048, 1365, 0, 0.1, 'assets/user-test/7.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget7);
-  const imageWidget8 = new ImageElementWidget(0, 350, 250, 333, 0, 0.5, 'assets/user-test/8.jpg', 'B3', 'C9', '38');
+  const imageWidget8 = new ImageElementWidget(0, 350, 2048, 1365, 0, 0.1, 'assets/user-test/8.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget8);
-  const imageWidget9 = new ImageElementWidget(0, 400, 250, 333, 0, 0.5, 'assets/user-test/9.jpg', 'B3', 'C9', '38');
+  const imageWidget9 = new ImageElementWidget(0, 400, 2048, 1365, 0, 0.1, 'assets/user-test/9.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget9);
-  const imageWidget10 = new ImageElementWidget(0, 450, 250, 333, 0, 0.5, 'assets/user-test/10.jpg', 'B3', 'C9', '38');
+  const imageWidget10 = new ImageElementWidget(0, 450, 2048, 1365, 0, 0.1, 'assets/user-test/10.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget10);
-  const imageWidget11 = new ImageElementWidget(0, 500, 250, 333, 0, 0.5, 'assets/user-test/11.jpg', 'B3', 'C9', '38');
+  const imageWidget11 = new ImageElementWidget(0, 500, 640, 960, 0, 0.1, 'assets/user-test/11.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget11);
-  const imageWidget12 = new ImageElementWidget(0, 550, 250, 333, 0, 0.5, 'assets/user-test/12.jpg', 'B3', 'C9', '38');
+  const imageWidget12 = new ImageElementWidget(0, 550, 2048, 1365, 0, 0.1, 'assets/user-test/12.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget12);
-  const imageWidget13 = new ImageElementWidget(0, 600, 250, 333, 0, 0.5, 'assets/user-test/13.jpg', 'B3', 'C9', '38');
+  const imageWidget13 = new ImageElementWidget(0, 600, 2048, 1365, 0, 0.1, 'assets/user-test/13.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget13);
-  const imageWidget14 = new ImageElementWidget(0, 650, 250, 333, 0, 0.5, 'assets/user-test/14.jpg', 'B3', 'C9', '38');
+  const imageWidget14 = new ImageElementWidget(0, 650, 640, 960, 0, 0.1, 'assets/user-test/14.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget14);
 //
   const videoWidget1 = new VideoElementWidget(300, 50, 250, 140, 0, 1, 'assets/user-test/boi.mp4', 'B3', 'C9', '38', '3');
@@ -290,7 +275,9 @@ function buildUserTest() {
 
 
   //Stack site web
-  //Stack vidéo
+  const libstack = new LibraryStack(600, 300, 300, 'ma stack', '#C9C9C9', false, []);
+  AddWidgetToScreen(libstack);
+    //Stack vidéo
   //Stack poubelle
 
 
