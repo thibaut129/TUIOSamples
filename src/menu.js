@@ -275,8 +275,14 @@ function buildUserTest() {
 
 
   //Stack site web
-  const libstack = new LibraryStack(600, 300, 300, 'ma stack', '#C9C9C9', false, []);
-  AddWidgetToScreen(libstack);
+  const websitestack = new LibraryStack(400, 300, 300, 'Site Web', '#2196f3', false, ['ImageElementWidget']);
+  const youtubestack = new LibraryStack(900, 300, 300, 'Youtube', '#f44336', false, ['VideoElementWidget']);
+  const trashstack = new LibraryStack(1400, 300, 300, 'Corbeille', '#C9C9C9', false, ['ImageElementWidget', 'VideoElementWidget']);
+
+  AddWidgetToScreen(websitestack);
+  AddWidgetToScreen(youtubestack);
+  AddWidgetToScreen(trashstack);
+
     //Stack vidéo
   //Stack poubelle
 
