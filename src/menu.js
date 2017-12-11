@@ -232,44 +232,44 @@ function buildDevelopmentTest() {
 
 function buildUserTest() {
   RemoveWidgets();
-  const imageWidget1 = new ImageElementWidget(10, 10, 640, 960, 10, 0.1, 'assets/user-test/1.jpg', 'B3', 'C9', '38');
+  const imageWidget1 = new ImageElementWidget(10, 10, 640, 960, 10, 0.1, 'assets/user-test/1.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget1);
-  const imageWidget2 = new ImageElementWidget(400, 50, 2048, 1365, 300, 0.1, 'assets/user-test/2.jpg', 'B3', 'C9', '38');
+  const imageWidget2 = new ImageElementWidget(400, 50, 2048, 1365, 300, 0.1, 'assets/user-test/2.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget2);
-  const imageWidget3 = new ImageElementWidget(550, 10, 2048, 1365, 40, 0.1, 'assets/user-test/3.jpg', 'B3', 'C9', '38');
+  const imageWidget3 = new ImageElementWidget(550, 10, 2048, 1365, 40, 0.1, 'assets/user-test/3.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget3);
-  const imageWidget4 = new ImageElementWidget(700, 150, 2048, 1365, 260, 0.1, 'assets/user-test/4.jpg', 'B3', 'C9', '38');
+  const imageWidget4 = new ImageElementWidget(700, 150, 2048, 1365, 260, 0.1, 'assets/user-test/4.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget4);
-  const imageWidget5 = new ImageElementWidget(900, 20, 2048, 1365, 60, 0.1, 'assets/user-test/5.jpg', 'B3', 'C9', '38');
+  const imageWidget5 = new ImageElementWidget(900, 20, 2048, 1365, 60, 0.1, 'assets/user-test/5.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget5);
-  const imageWidget6 = new ImageElementWidget(1400, 50, 2048, 1365, 190, 0.1, 'assets/user-test/6.jpg', 'B3', 'C9', '38');
+  const imageWidget6 = new ImageElementWidget(1400, 50, 2048, 1365, 190, 0.1, 'assets/user-test/6.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget6);
-  const imageWidget7 = new ImageElementWidget(40, 800, 2048, 1365, 80, 0.1, 'assets/user-test/7.jpg', 'B3', 'C9', '38');
+  const imageWidget7 = new ImageElementWidget(40, 800, 2048, 1365, 80, 0.1, 'assets/user-test/7.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget7);
-  const imageWidget8 = new ImageElementWidget(300, 700, 2048, 1365, 170, 0.1, 'assets/user-test/8.jpg', 'B3', 'C9', '38');
+  const imageWidget8 = new ImageElementWidget(300, 700, 2048, 1365, 170, 0.1, 'assets/user-test/8.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget8);
-  const imageWidget9 = new ImageElementWidget(700, 750, 2048, 1365, 100, 0.1, 'assets/user-test/9.jpg', 'B3', 'C9', '38');
+  const imageWidget9 = new ImageElementWidget(700, 750, 2048, 1365, 100, 0.1, 'assets/user-test/9.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget9);
-  const imageWidget10 = new ImageElementWidget(900, 820, 2048, 1365, 130, 0.1, 'assets/user-test/10.jpg', 'B3', 'C9', '38');
+  const imageWidget10 = new ImageElementWidget(900, 820, 2048, 1365, 130, 0.1, 'assets/user-test/10.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget10);
-  const imageWidget11 = new ImageElementWidget(1270, 470, 640, 960, 120, 0.1, 'assets/user-test/11.jpg', 'B3', 'C9', '38');
+  const imageWidget11 = new ImageElementWidget(1270, 470, 640, 960, 120, 0.1, 'assets/user-test/11.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget11);
-  const imageWidget12 = new ImageElementWidget(1400, 840, 2048, 1365, 110, 0.1, 'assets/user-test/12.jpg', 'B3', 'C9', '38');
+  const imageWidget12 = new ImageElementWidget(1400, 840, 2048, 1365, 110, 0.1, 'assets/user-test/12.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget12);
-  const imageWidget13 = new ImageElementWidget(1600, 800, 2048, 1365, 140, 0.1, 'assets/user-test/13.jpg', 'B3', 'C9', '38');
+  const imageWidget13 = new ImageElementWidget(1600, 800, 2048, 1365, 140, 0.1, 'assets/user-test/13.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget13);
-  const imageWidget14 = new ImageElementWidget(40, 400, 640, 960, 50, 0.1, 'assets/user-test/14.jpg', 'B3', 'C9', '38');
+  const imageWidget14 = new ImageElementWidget(40, 400, 640, 960, 50, 0.1, 'assets/user-test/14.jpg', 'B3', 'C9', '38', '6');
   AddWidgetToScreen(imageWidget14);
 //
-  const videoWidget1 = new VideoElementWidget(200, 50, 250, 140, 180, 1, 'assets/user-test/boi.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget1 = new VideoElementWidget(200, 50, 250, 140, 180, 1, 'assets/user-test/boi.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget1);
-  const videoWidget2 = new VideoElementWidget(1100, 20, 250, 140, 70, 1, 'assets/user-test/crash.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget2 = new VideoElementWidget(1100, 20, 250, 140, 70, 1, 'assets/user-test/crash.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget2);
-  const videoWidget3 = new VideoElementWidget(40, 600, 250, 140, 200, 1, 'assets/user-test/hey.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget3 = new VideoElementWidget(40, 600, 250, 140, 200, 1, 'assets/user-test/hey.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget3);
-  const videoWidget4 = new VideoElementWidget(1700, 100, 250, 140, 30, 1, 'assets/user-test/kazoo.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget4 = new VideoElementWidget(1700, 100, 250, 140, 30, 1, 'assets/user-test/kazoo.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget4);
-  const videoWidget5 = new VideoElementWidget(1700, 675, 250, 140, 250, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget5 = new VideoElementWidget(1700, 675, 250, 140, 250, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget5);
 
 
