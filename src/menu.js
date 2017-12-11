@@ -252,24 +252,24 @@ function buildUserTest() {
   AddWidgetToScreen(imageWidget9);
   const imageWidget10 = new ImageElementWidget(900, 820, 2048, 1365, 130, 0.1, 'assets/user-test/10.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget10);
-  const imageWidget11 = new ImageElementWidget(1200, 770, 640, 960, 120, 0.1, 'assets/user-test/11.jpg', 'B3', 'C9', '38');
+  const imageWidget11 = new ImageElementWidget(1270, 470, 640, 960, 120, 0.1, 'assets/user-test/11.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget11);
   const imageWidget12 = new ImageElementWidget(1400, 840, 2048, 1365, 110, 0.1, 'assets/user-test/12.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget12);
   const imageWidget13 = new ImageElementWidget(1600, 800, 2048, 1365, 140, 0.1, 'assets/user-test/13.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget13);
-  const imageWidget14 = new ImageElementWidget(1850, 800, 640, 960, 50, 0.1, 'assets/user-test/14.jpg', 'B3', 'C9', '38');
+  const imageWidget14 = new ImageElementWidget(40, 400, 640, 960, 50, 0.1, 'assets/user-test/14.jpg', 'B3', 'C9', '38');
   AddWidgetToScreen(imageWidget14);
 //
   const videoWidget1 = new VideoElementWidget(200, 50, 250, 140, 180, 1, 'assets/user-test/boi.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget1);
   const videoWidget2 = new VideoElementWidget(1100, 20, 250, 140, 70, 1, 'assets/user-test/crash.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget2);
-  const videoWidget3 = new VideoElementWidget(350, 1000, 250, 140, 200, 1, 'assets/user-test/hey.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget3 = new VideoElementWidget(40, 600, 250, 140, 200, 1, 'assets/user-test/hey.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget3);
-  const videoWidget4 = new VideoElementWidget(920, 1000, 250, 140, 30, 1, 'assets/user-test/kazoo.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget4 = new VideoElementWidget(1700, 100, 250, 140, 30, 1, 'assets/user-test/kazoo.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget4);
-  const videoWidget5 = new VideoElementWidget(1700, 975, 250, 140, 250, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '3');
+  const videoWidget5 = new VideoElementWidget(1700, 675, 250, 140, 250, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '3');
   AddWidgetToScreen(videoWidget5);
 
 
