@@ -48,16 +48,17 @@ function buildDevelopment() {
   $('#example-container').empty();
   buildBackButton();
   const imageWidget = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
-  AddWidgetToScreen(imageWidget);
+  //AddWidgetToScreen(imageWidget);
   const imageWidgetA = new ImageElementWidget(600, 50, 200, 210, 0, 2, 'assets/joy.png', 'B3', 'C9', '38');
-  AddWidgetToScreen(imageWidgetA);
+  //AddWidgetToScreen(imageWidgetA);
 
-  const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 1, 'assets/video/video.mp4', 'B3', 'C9', '38', '3');
-  AddWidgetToScreen(videoWidget);
-
+  //const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 1, 'assets/video/video.mp4', 'B3', 'C9', '38', '3');
+  //AddWidgetToScreen(videoWidget);
+  const videoWidget5 = new VideoElementWidget(100, 675, 250, 140, 0, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '6', '3');
+  AddWidgetToScreen(videoWidget5);
   //test de LibraryStack
   const libstack = new LibraryStack(600,300, 300, 300);
-  AddWidgetToScreen(libstack);
+  //AddWidgetToScreen(libstack);
   const imageWidget2 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   const imageWidget3 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   const imageWidget4 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
