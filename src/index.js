@@ -10,8 +10,7 @@ import $ from 'jquery/dist/jquery.min';
 // Import TUIOManager
 import TUIOManager from 'tuiomanager/core/TUIOManager';
 
-// Import ImageWidget
-import ImageWidget from './ImageWidget/ImageWidget';
+import { buildMenu } from './menu';
 
 /** TUIOManager starter **/
 const tuioManager = new TUIOManager();
@@ -20,8 +19,8 @@ tuioManager.start();
 /** App Code **/
 
 const buildApp = () => {
-  const imageWidget = new ImageWidget(0, 0, 250, 333, 'assets/IMG_20150304_201145.jpg');
-  $('#app').append(imageWidget.domElem);
+  $('#app').append('<div id="example-container"> </div>');
+  buildMenu();
 };
 
 $(window).ready(() => {
