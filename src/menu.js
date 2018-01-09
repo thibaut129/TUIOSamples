@@ -8,9 +8,9 @@ import $ from 'jquery/dist/jquery.min';
 // Import ImageWidget
 import ImageElementWidget from 'tuiomanager/widgets/ElementWidget/ImageElementWidget/ImageElementWidget';
 import VideoElementWidget from 'tuiomanager/widgets/ElementWidget/VideoElementWidget/VideoElementWidget';
-//import LibraryBar from 'tuiomanager/widgets/Library/LibraryBar/LibraryBar';
+// import LibraryBar from 'tuiomanager/widgets/Library/LibraryBar/LibraryBar';
 import CircularMenu from 'tuiomanager/widgets/CircularMenu/CircularMenu';
-import LibraryStack from 'tuiomanager/widgets/Library/LibraryStack/LibraryStack'
+import LibraryStack from 'tuiomanager/widgets/Library/LibraryStack/LibraryStack';
 import MenuItem from 'tuiomanager/widgets/CircularMenu/MenuItem';
 import { buildNoobWork } from './dev-test';
 
@@ -20,16 +20,15 @@ function AddWidgetToScreen(widget) {
 //  $('#example-container').append(widget.domElem);
   widget.addTo('#example-container');
   widgets.push(widget);
-}//AddWidgetToScreen()
+}// AddWidgetToScreen()
 
 function RemoveWidgets() {
   $('#example-container').empty();
   for (let i = 0; i < widgets.length; i += 1) {
     widgets[i].deleteWidget();
   }
-  widgets=[];
+  widgets = [];
 }
-
 
 
 function getRand(min, max) {
@@ -40,25 +39,27 @@ function buildBackButton() {
   $('#example-container').append('<button id="back-button">Back</button>');
   $('#back-button').on('click', () => {
     RemoveWidgets();
+    /* eslint-disable no-use-before-define */
     buildMenu();
+    /* eslint-enable no-use-before-define */
   });
 }//  displayMenu()
 
 function buildDevelopment() {
   $('#example-container').empty();
   buildBackButton();
-  const imageWidget = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
-  //AddWidgetToScreen(imageWidget);
-  const imageWidgetA = new ImageElementWidget(600, 50, 200, 210, 0, 2, 'assets/joy.png', 'B3', 'C9', '38');
-  //AddWidgetToScreen(imageWidgetA);
+  // const imageWidget = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
+  // AddWidgetToScreen(imageWidget);
+  // const imageWidgetA = new ImageElementWidget(600, 50, 200, 210, 0, 2, 'assets/joy.png', 'B3', 'C9', '38');
+  // AddWidgetToScreen(imageWidgetA);
 
-  //const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 1, 'assets/video/video.mp4', 'B3', 'C9', '38', '3');
-  //AddWidgetToScreen(videoWidget);
+  // const videoWidget = new VideoElementWidget(100, 100, 250, 140, 0, 1, 'assets/video/video.mp4', 'B3', 'C9', '38', '3');
+  // AddWidgetToScreen(videoWidget);
   const videoWidget5 = new VideoElementWidget(100, 675, 250, 140, 0, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget5);
-  //test de LibraryStack
-  const libstack = new LibraryStack(600,300, 300, 300);
-  //AddWidgetToScreen(libstack);
+  // test de LibraryStack
+  const libstack = new LibraryStack(600, 300, 300, 300);
+  // AddWidgetToScreen(libstack);
   const imageWidget2 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   const imageWidget3 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
   const imageWidget4 = new ImageElementWidget(0, 0, 250, 333, 0, 2, 'assets/IMG_20150304_201145.jpg', 'B3', 'C9', '38');
@@ -125,7 +126,7 @@ function SpawnRotation(difficulty) {
 }//  SpawnRotation()
 
 function SpawnScale(difficulty) {
-  if(difficulty === 'difficult') {
+  if (difficulty === 'difficult') {
     return getRand(0.5, 1.4);
   }
   return 1;
@@ -228,7 +229,6 @@ function buildCircularMenuPuzzles() {
 function buildDevelopmentTest() {
   RemoveWidgets();
   buildNoobWork();
-
 }//  buildDevelopmentTest()
 
 function buildUserTest() {
@@ -273,9 +273,7 @@ function buildUserTest() {
   const videoWidget5 = new VideoElementWidget(1700, 675, 250, 140, 250, 1, 'assets/user-test/somebody.mp4', 'B3', 'C9', '38', '6', '3');
   AddWidgetToScreen(videoWidget5);
 
-
-
-  //Stack site web
+  // Stack site web
   const websitestack = new LibraryStack(400, 300, 300, 'Site Web', '#2196f3', false, ['ImageElementWidget']);
   const youtubestack = new LibraryStack(900, 300, 300, 'Youtube', '#f44336', false, ['VideoElementWidget']);
   const trashstack = new LibraryStack(1400, 300, 300, 'Corbeille', '#C9C9C9', false, ['ImageElementWidget', 'VideoElementWidget']);
@@ -284,14 +282,11 @@ function buildUserTest() {
   AddWidgetToScreen(youtubestack);
   AddWidgetToScreen(trashstack);
 
-    //Stack vidéo
-  //Stack poubelle
-
-
-
+  // Stack vidéo
+  // Stack poubelle
 }// buildUserTest
 
-export function buildMenu() {
+export default function buildMenu() {
   $('#example-container').append('<h1> TUIO Showcase </h1>');
   $('#example-container').append('<button id="development" class="menu-button"> Development </button> </br>');
   $('#example-container').append('<button id="health" class="menu-button"> Health (using ImageElementWidget) </button></br>');
